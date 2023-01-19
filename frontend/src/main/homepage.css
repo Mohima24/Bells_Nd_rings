@@ -1,0 +1,35 @@
+ @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500&display=swap');
+
+ /* font-family: 'League Spartan', sans-serif;
+font-family: 'Libre Franklin', sans-serif; */
+h1,h2,h3,h4,h5,h6{
+    font-family: 'League Spartan', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.paddingtop{
+    margin-top:7%;
+}
+#banner{
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+#banner>img{
+    width: 100%;
+    z-index: -1;
+}
+#banner>a{
+    font-family:'League Spartan', sans-serif;
+    color: white;
+    font-size: 2rem;
+    padding: 10px 0px;
+    position: absolute;
+    top:197px;
+    bottom: 156;
+    left: 480px;
+    background-color: black;
+    border-radius: 15px;
+    right: 480px;
+}

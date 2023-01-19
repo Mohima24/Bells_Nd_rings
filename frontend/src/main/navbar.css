@@ -1,0 +1,147 @@
+/* #ff5757 */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+}
+#topNavbar{
+    width: 100%;
+    height: auto;
+    padding: 8px 0px;
+    background-color: #ff5757;
+}
+.container{
+    width: 90%;
+    margin: auto;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+#leftside{
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+#leftside>div{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+#leftside>div>img{
+    width: 10%;
+}
+#topNavbar p,#topNavbar a,#topNavbar span{
+    color: white;
+    font-size: 14px;
+}
+#rightside{
+    width: 35%;
+    display: flex;
+    /* justify-content:space-around; */
+}
+#rightside>div{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+#rightside>div>img{
+    width: 10%;
+    overflow: hidden;
+    margin-right: 5px;
+}
+
+/* ------------------------------------bottom----------------------------- */
+
+#botNavbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo{
+    width: 15%;
+    height: 50%;
+    overflow: hidden;
+}
+#loginsearch{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(13,1fr);
+    text-align: center;
+}
+#search{
+    position: relative;
+    grid-area: 1/1/1/9;
+}
+#search>input[type=search]{
+    padding: 10px;
+    width: 100%;
+}
+#search>i{
+    position: absolute;
+    top:10px;
+    bottom: 0;
+    right:10px;
+    color: #ff5757;
+}
+#shopplus{
+    grid-area: 1/10/1/12;
+}
+#admin{
+    grid-area: 1/12/1/13;
+}
+#cart {
+    grid-area: 1/13/1/14;
+}
+#shopplus img{
+    width: 50%;
+    overflow: hidden;
+}
+
+.flaticons{
+    font-size: 26px;
+}
+
+/* ------------------navoption----------------------- */
+
+#navoption ul{
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+#navoption ul a{
+    display: block;
+    color: black;
+    line-height: 1.5rem;
+    padding: 0 10px;
+}
+#navoption ul li{
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+#navoption ul ul{
+    position: absolute;
+    top:100%;
+    left:0;
+    display: none;
+}
+#navoption ul ul li{
+    float: none;
+    width: 200px;
+}
+
+#navoption ul ul ul{
+    top:0px;
+    left: 100%;
+}
+#navoption ul li:hover>ul{
+    display: block;
+}
