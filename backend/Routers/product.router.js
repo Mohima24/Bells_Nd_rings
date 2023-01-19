@@ -4,12 +4,33 @@ const jwt=require("jsonwebtoken")
 require("dotenv").config()
 const productRouter = express.Router()
 
-productRouter.get("/",async(req,res)=>{
-        let data = await ProductModel.find({})
+productRouter.get("/all",async(req,res)=>{
+        let data = await ProductModel.find({}).limit(5)
         res.send(data)
-
 })
-
+productRouter.get("/",async(req,res)=>{
+    const {ptype,name,sort,limit,page} = req.query;
+    let queries = {};
+    if(queries.name == undefined && queries.ptype==undefined){
+        queries={}
+    }else if(queries.name == undefined){
+        queries.ptype = { '$regex': ptype, '$options': 'i' };
+    }else{
+        queries.name = { '$regex': name, '$options': 'i' };
+    }
+    let sorting = {}
+    if(sort ==1){
+        sorting[sort] = 1;
+    }else if(sort == 0){
+        sorting[sort] = 1
+    }
+    let limits=0
+    if(limit!=undefined){
+        limits = limit
+    }
+    let data = await ProductModel.find(queries).sort(sorting).skip((page - 1) * limit).limit(limits);
+    res.send(data)
+})
 productRouter.post("/post",async(req,res)=>{
     const {name,rating,price,material,adminID,adminName,img,ptype}= req.body;
     const postData = new ProductModel({name,rating,price,material,adminID,adminName,img,ptype})

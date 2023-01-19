@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600&family=Libre+Franklin:wght@500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600&family=Libre+Franklin:wght@500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="homepage.css">
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="../navbar/navbar.css">
+    <link rel="stylesheet" href="../footer/footer.css">
     <title>Home Pgae</title>
 </head>
 
@@ -51,22 +54,24 @@
         </div>
         <div id="botNavbar" class="container">
             <div id="logo">
-                <img width="80%" src="../logo/logo2.png" alt="logo">
+                <img width="80%" src="../images/logo2.png" alt="logo">
             </div>
             <div id="loginsearch">
                 <div id="search">
-                    <input type="search">
+                    <input type="search" id="inputsearch">
                     <i class="fa-solid fa-magnifying-glass"></i>
+                    <div id="searchData">
+                    </div>
                 </div>
                 <div id="shopplus">
-                    <a href="#">shop <span><img src="../logo/Untitled design.png" alt=""></span></a>
+                    <a href="#">shop <span><img src="../images/Untitled design.png" alt=""></span></a>
                 </div>
                 <div id="admin">
-                    <img class="flaticons" src="../logo/user (1).png" alt="">
+                    <img class="flaticons" src="../images/user (1).png" alt="">
                     <p>Account</p>
                 </div>
                 <div id="cart">
-                    <img class="flaticons" src="../logo/shopping-cart.png" alt="">
+                    <img class="flaticons" src="../images/shopping-cart.png" alt="">
                     <p>Cart</p>
                 </div>
             </div>
@@ -110,12 +115,326 @@
         <div id="banner" class="paddingtop">
             <img src="https://www.dollartree.com/file/general/w_hero_vday_floral_1250x400_20221227.jpg" alt="banner">
             <a href="#">Shop Now</a>
-            <!-- <h1>hello</h1> -->
         </div>
-        <div id="thrilling" class="paddingtop">
-            <h1>Shop Thrilling Finds</h1>
+        <div class="paddingtop">
+            <h1 style="text-align: center;">Shop Thrilling Finds</h1>
+            <div id="thrilling">
+                <div name="hello">
+                    <img src="https://www.dollartree.com/file/general/w_tf_candleholders_200x200_20221226.jpg"
+                        alt="Candleholders">
+                    <a href="#">
+                        <h4>Candleholders</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_tf_calendar_planners_200x200_20221226.jpg"
+                        alt="Calendars & Planners">
+                    <a href="#">
+                        <h4>Calendars & Planners</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_tf_care_package_supplies_200x200_20221226.jpg"
+                        alt="Care Package Supplies">
+                    <a href="#">
+                        <h4>Care Package Supplies</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_tf_personal_care_200x200_20221226.jpg"
+                        alt="Personal Care">
+                    <a href="#">
+                        <h4>Personal Care</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_tf_bakeware_200x200_20221226.jpg"
+                        alt="Bakeware">
+                    <a href="#">
+                        <h4>Bakeware</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_tf_totes_bags_200x200_20221226.jpg"
+                        alt="Totes & Bags">
+                    <a href="#">
+                        <h4>Totes & Bags</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_tf_wine_champagne_glasses_200x200_20221226.jpg"
+                        alt="Wine & Champagne Glasses">
+                    <a href="#">
+                        <h4>Wine & Champagne Glasses</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_tf_dinnerware_200x200_20221226.jpg"
+                        alt="Dinnerware">
+                    <a href="#">
+                        <h4>Dinnerware</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_tf_candy_gum_200x200_20221226.jpg"
+                        alt="Candy & Gum">
+                    <a href="#">
+                        <h4>Candy & Gum</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_tf_storage_organization_200x200_20221226.jpg"
+                        alt="Storage & Organization">
+                    <a href="#">
+                        <h4>Storage & Organization</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_tf_cleaners_200x200_20221226.jpg"
+                        alt="Cleaners">
+                    <a href="#">
+                        <h4>Cleaners</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_tf_beauty_supplies_200x200_20221226.jpg"
+                        alt="Beauty Supplies">
+                    <a href="#">
+                        <h4>Beauty Supplies</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="paddingtop">
+            <h2 class="discoverh2">Discover Dollar Tree Plus</h2>
+            <div id="Discovertree">
+                <div>
+                    <img src="https://www.dollartree.com/file/general/dt_plus_main_landing_2a_$3_615x260_20221019.jpg"
+                        alt="">
+                    <h6>Shop $3 Items</h6>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/dt_plus_main_landing_2a_$5_615x260_20221019.jpg"
+                        alt="">
+                    <h6>Shop $5 Items</h6>
+                </div>
+            </div>
+        </div>
+        <div class="paddingtop">
+            <h2 class="discoverh2">Party Supplies</h2>
+            <div id="partSupplies">
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_3a_catering_supplies_400x400_20221226.jpg"
+                        alt="">
+                    <h6>Catering Supplies</h6>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_3a_balloons_400x400_20221226.jpg" alt="">
+                    <h6>Party Balloons</h6>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_3a_solid_color_party_supplies_400x400_20221226.jpg"
+                        alt="">
+                    <h6>Plastic Dinnerware</h6>
+                </div>
+            </div>
+        </div>
+        <div class="paddingtop">
+            <h2 class="discoverh2">Customer-Favorites</h2>
+            <!------------------------ cursol slider-------------------- -->
+        </div>
+        <article class="paddingtop" style="background-color:#f2f3f3;">
+            <h1 id="offersarticleh1">On the Hunt for Gifts? Plan Your Next Store Trip</h1>
+            <div id="offersarticle">
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_in_store_black_friday_ad_20221125.png" alt="">
+                    <h6>Check Out Our Ad</h6>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_store_icon_3a_in_store_specials_20210829.png"
+                        alt="">
+                    <h6>In-Store Specials</h6>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_store_icon_3a_iotw_20210829.png" alt="">
+                    <h6>Item of The Week</h6>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div id="arrivals">
+                <div>
+                    <img src="../images/Beige Minimalist New Arrivals Instagram Post.png" alt="">
+                    <h6>It's the Thrill of the Hunt</h6>
+                    <p>You never know what deals you'll find at Dollar Tree. Shop items specially curated for you.</p>
+                    <button>Shop Now</button>
+                </div>
+                <div>
+                    <img src="../images/Red Valentine Special Discount Promo Facebook Post .png" alt="">
+                    <h6>New Arrivals</h6>
+                    <p>We have new items online and in stores every week, so come shop our newest deals.</p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+        </article>
+        <div id="floralSupplies" class="paddingtop">
+            <div id="floralSuppliesFs">
+                <div>
+                    <h3>Floral Supplies</h3>
+                    <p>Create opulent floral arrangements & centerpieces for your home, tables, and more!</p>
+                </div>
+                <img src="https://www.dollartree.com/file/general/w_curated1__floral_20221226.jpg" alt="">
+                <button>Shop Now</button>
+            </div>
+            <div id="floralSuppliessec">
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_curated1_vases_containers_20221226.jpg" alt="">
+                    <h5>Vases & Containers</h5>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_curated1_wreath_forms_20221226.jpg" alt="">
+                    <h5>Wreath Forms</h5>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_curated1_embellishments_accents_20221226.jpg"
+                        alt="">
+                    <h5>Ribbons & Mesh</h5>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_curated1_flowers_bushes_greenery_20221226.jpg"
+                        alt="">
+                    <h5>Flowers, Bushes & Greenery</h5>
+                </div>
+            </div>
+        </div>
+        <div id="floralSupplies" class="paddingtop">
+            <div id="floralSuppliesFs">
+                <div>
+                    <h3>Creative Craft Supplies</h3>
+                    <p>Create Cupid-worthy crafts this Valentine’s Day!</p>
+                </div>
+                <img src="https://www.dollartree.com/file/general/w_curated2__crafting_20221226.jpg" alt="">
+                <button>Shop Now</button>
+            </div>
+            <div id="floralSuppliessec">
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_curated2_yarn_fabric_20221226.jpg" alt="">
+                    <h5>Vases & Containers</h5>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_curated2_pour_paint_collection_20221226.jpg"
+                        alt="">
+                    <h5>Wreath Forms</h5>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_curated2_travel_tumbler_20221226.jpg" alt="">
+                    <h5>Ribbons & Mesh</h5>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_curated2_jewels_beads_20221226.jpg" alt="">
+                    <h5>Flowers, Bushes & Greenery</h5>
+                </div>
+            </div>
+        </div>
+        <div class="paddingtop" id="marginbot">
+            <h1 style="text-align: center;">Get Inspired on Our Value Seekers Blog</h1>
+            <div id="valentine">
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_blog__vday_beaded_heart_20221226.jpg"
+                        alt="Candleholders">
+                    <a href="#">
+                        <h4>Valentine’s Day Beaded Heart Wall Décor</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_blog_diy_rose_arrangement_20221226.jpg"
+                        alt="Calendars & Planners">
+                    <a href="#">
+                        <h4>DIY Rose Arrangement</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_blog_diy_vday_block_decor_20221226.jpg"
+                        alt="Care Package Supplies">
+                    <a href="#">
+                        <h4>DIY Valentine’s Day Block Décor</h4>
+                    </a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/w_blog_heart_coaster_set_20221226.jpg"
+                        alt="Personal Care">
+                    <a href="#">
+                        <h4>Heart Coaster Gift Set</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="enddiv">
+            <a href="#">Email Sign Up</a>
+            <div>
+                <p>Be the first to know about new arrivals online, in-store specials & events, fun ideas & inspiration,
+                    and more!</p>
+            </div>
+            <button>Sign Up</button>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <div id="upperdiv" class="container">
+            <div>
+                <div id="social">
+                    <a href="#"><img src="https://www.dollartree.com/file/general/footericon_Instagram.png" alt=""></a>
+                    <a href="#"><img src="https://www.dollartree.com/file/general/footericon-fb.png" alt=""></a>
+                    <a href="#"><img src="https://www.dollartree.com/file/general/footericon-twitter.png" alt=""></a>
+                    <a href="#"><img src="https://www.dollartree.com/file/general/footericon-linkedin.png" alt=""></a>
+                    <a href="#"><img src="https://www.dollartree.com/file/general/footericon-pinterest.png" alt=""></a>
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/vsblogo_final_m_260x55_20200805.png" alt="">
+                </div>
+                <div>
+                    <img src="https://www.dollartree.com/file/general/footer-videos.png" alt="">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>Customer Service</p>
+                    <a href="#">Catalog Quick Order</a>
+                    <a href="#">Contact Us / Help Center</a>
+                    <a href="#">Forgot Password</a>
+                    <a href="#">In-Store Pickup</a>
+                    <a href="#">My Account</a>
+                    <a href="#">Order Status</a>
+                    <a href="#">Placing Tax-Exempt Orders</a>
+                    <a href="#">Recall Information</a>
+                    <a href="#">En Español</a>
+                    <a href="#">Privacy Requests</a>
+                </div>
+                <div>
+                    <p>Dollar Tree Stores</p>
+                    <a href="#">Gift Cardsr</a>
+                    <a href="#">Reloadable Debit Cards</a>
+                    <a href="#">Store Locator</a>
+                    <a href="#">Store Careers</a>
+                    <a href="#">Weekly Ad</a>
+                    <a href="#">Value Seekers Blog</a>
+                    <a href="#">Dollar Tree Canada</a>
+                    <a href="#">Coronavirus Response</a>
+                </div>
+                <div>
+                    <p>Company Info</p>
+                    <a href="#">About Us</a>
+                    <a href="#">Affiliates</a>
+                    <a href="#">Associates</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Investor Relations</a>
+                    <a href="#">Real Estate Partners</a>
+                    <a href="#">Sustainability Report (PDF 2.7 MB)</a>
+                    <a href="#">Vendor Partners</a>
+                    <a href="#">W2 Information</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
+<script src="index.js"></script>
