@@ -1,4 +1,10 @@
 /* #ff5757 */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500&display=swap');
+h1,h2,h3,h4,h5,h6,a{
+    font-family: 'League Spartan', sans-serif;
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -14,7 +20,7 @@ a{
 }
 .container{
     width: 90%;
-    margin: auto;
+    margin:auto;
 }
 .flex{
     display: flex;
@@ -103,11 +109,42 @@ a{
 }
 
 .flaticons{
-    font-size: 26px;
+    font-size: 26px;  
+}
+#admin,#cart,#logo,#shopplus{
+    cursor: pointer;
+}
+#searchData{
+    position: absolute;
+    width: 98%;
+    padding: 1%;
+    z-index: 2;
+    background-color: white;
+}
+#searchData>div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#searchData>div>img{
+    width: 8%;
+    left: 1%;
+}
+#searchData>div>p{
+    width: 70%;
+}
+#searchData>div>h6{
+    width: 10%;
+}
+#searchData>div:hover{
+    background-color: rgb(241, 235, 235);
+}
+#searchData>div:hover>img{
+    filter: grayscale(100%);
 }
 
 /* ------------------navoption----------------------- */
-
 #navoption ul{
     list-style: none;
     position: relative;
