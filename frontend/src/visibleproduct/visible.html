@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="visible.css">
     <link rel="stylesheet" href="../navbar/navbar.css">
     <link rel="stylesheet" href="../footer/footer.css">
     <link
@@ -51,7 +51,7 @@
         </div>
         <div id="botNavbar" class="container">
             <div id="logo">
-                <a href="../main/index.html"><img width="80%" src="../images/logo2.png" alt="logo"></a>
+                <a href="index.html"><img width="80%" src="../images/logo2.png" alt="logo"></a>
             </div>
             <div id="loginsearch">
                 <div id="search">
@@ -106,77 +106,25 @@
             </ul>
         </div>
     </header>
-    <main id="mainsection" class="container">
-        <div id="left">
-            <div id="ratings">
-                <p>AVERAGE RATING AND UP</p>
-                <hr>
-                <div>
-                    <input type="checkbox" value="5">
-                    <div>
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                    </div>
-                </div>
-                <div>
-                    <input type="checkbox" value="4">
-                    <div>
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                    </div>
-                </div>
-                <div>
-                    <input type="checkbox" value="3">
-                    <div>
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                    </div>
-                </div>
-                <div>
-                    <input type="checkbox" value="2">
-                    <div>
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                    </div>
-                </div>
-                <div>
-                    <input type="checkbox" value="1">
-                    <div>
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                    </div>
-                </div>
-            </div>
-            <div id="material">
-            </div>
+    <main id="productsel" class="container">
+        <div id="imgside">
+            <img src="https://www.dollartree.com/ccstore/v1/images/?source=/file/v3221598094008927857/products/318606.jpg&height=940&width=940" alt="">
         </div>
-        <div id="right">
-            <h1>Candleholders</h1>
-            <p>Find the perfect base for your favorite candles and add an extra touch of style to your home or party for less with our affordable selection of trendy candleholders.</p>
-            <label>Sort By</label>
-            <select name="options" id="options">
-                <option value="">Relevance</option>
-                <option value="lth">Low to High Price</option>
-                <option value="htl">High to Low Price</option>
-            </select>
-            <div id="products">
-
+        <div id="detailside">
+            <h1>Frosted Votive Candle Holder with Gold Ring</h1>
+            <div id="review"><img src="../images/5star.jpg" alt=""> <span>5.0</span></div>
+            <p>The item you have selected is on backorder. It should be available within 30 days.</p>
+            <p id="amount">1.25 <span>(each)</span></p>
+            <div>
+                <select id="quantity">
+                    <option value=24>24</option>
+                    <option value=48>48</option>
+                    <option value=72>72</option>
+                    <option value=96>96</option>
+                </select>
+                <p>$ 1200</p>
             </div>
+            <button id="addtocart">Add to cart</button>
         </div>
     </main>
     <footer>
@@ -238,6 +186,5 @@
     </footer>
 </body>
 </html>
-<script src="../navbar/search.js"></script>
-<script src="product.js"></script>
+<script src="visible.js"></script>
 <script src="../cart_page/cart.js"></script>

@@ -1,0 +1,84 @@
+#lowercart{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10% 0;
+}
+#dummy{
+    width: 40%;
+    line-height: 1.2;
+}
+.orderSummery{
+    width: 40%;
+}
+.orderSummery>h1{
+    margin-bottom: 14%;
+} 
+.orderSummery button{
+    width: 40%;
+    margin: auto;
+    background-color: #ff5757;
+    color: white;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+#promocode{
+    width: 100%;
+    display:flex;
+    color: #ff5757;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.orderSummery>div>div{
+    margin: 5% 0;
+}
+.codeinput{
+    display: none;
+}
+#apply{
+    background-color: #ff5757;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+}
+/* -------------------carts------------- */
+
+#cartdata>div{
+    display: flex;
+    width: 95%;
+    border: 1px solid rgba(128, 128, 128, 0.205);
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 2%;
+}
+#cartdata>div:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#cartdata>div>h4{
+    width: 50%;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ff5757;
+}
+#cartdata>div>div{
+    width: 10%;
+    background-color: black;
+}
+#cartdata>div>div>select{
+    width: 100%;
+    padding: 8px 3px;
+}
+#cartdata>div>button{
+    width: 10%;
+    padding: 8px 0;
+    background-color: #ff5757;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+}
+#cartdata>div>img{
+    width: 10%;
+}

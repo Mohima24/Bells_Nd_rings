@@ -24,7 +24,7 @@ userRouter.post("/register",async(req,res)=>{
                 }
             })
        }else{
-        res.send({"msg":"user already registered"})
+        res.send(statusbar=503)
        }
     }catch(err){
         console.log(err)
@@ -41,13 +41,13 @@ userRouter.post("/login",async(req,res)=>{
             bcrypt.compare(pass, data.pass, async(err, result) => {
                 if(result){
                     const token = jwt.sign({"userID": data._id}, process.env.userkey)
-                    res.send({"msg":"logIn Successfully","token":token})
+                    res.send({"msg":"logIn Successfully","token":token,"userName":data.name})
                 }else{
-                    res.send({"msg":"Please log-in first"})
+                    res.send({"msg":"Please log-in first"},statusbar=404)
                 }
             })
         }else{
-            res.send({"msg":"Please log-in first"})
+            res.send({"msg":"Please log-in first"},statusbar=404)
         }
     }
     catch(err){

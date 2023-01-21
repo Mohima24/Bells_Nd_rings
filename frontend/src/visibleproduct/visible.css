@@ -1,0 +1,64 @@
+#productsel{
+    display: flex;
+    margin: 6% auto;
+    font-family: 'League Spartan', sans-serif;
+    color: #ff5757;
+}
+#imgside{
+    width: 50%;
+}
+#imgside>img{
+    width: 80%;
+}
+
+
+/* ---------------------------left side------------- */
+
+#detailside{
+    width: 50%;
+}
+#detailside>h1{
+    font-weight: 400;
+    color: #ff5757;
+}
+#review{
+    border-bottom: 1px solid grey;
+    margin:2% 0;
+}
+#review+p{
+    margin-bottom: 3%;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: rgb(211, 18, 18);
+}
+#detailside img{
+    width: 15%;
+}
+#amount{
+    font-size: 1.9rem;
+    font-weight: 500;
+    padding: 2% 0;
+    border-bottom: 1px solid gray;
+}
+#amount>span{
+    color: rgb(79, 69, 69);
+    font-size: 1rem;
+}
+/* ---------------------------------amount-------------- */
+#amount+div{
+    display: flex;
+    margin: 5% 0;
+    align-items: center;
+}
+#quantity{
+    width: 48%;
+    padding: 10px 5px;
+}
+#addtocart{
+    padding:2% 5%;
+    background-color: #ff5757;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}

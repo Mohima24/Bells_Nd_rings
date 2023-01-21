@@ -8,6 +8,11 @@ productRouter.get("/all",async(req,res)=>{
         let data = await ProductModel.find({}).limit(5)
         res.send(data)
 })
+productRouter.get("/:id",async(req,res)=>{
+    let ID = req.params.id
+    let data = await ProductModel.findOne({_id:ID})
+    res.send(data)
+})
 productRouter.get("/",async(req,res)=>{
     const {ptype,rating,sort,limit,page} = req.query;
     let queries = {};

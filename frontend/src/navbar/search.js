@@ -1,6 +1,18 @@
 const search = document.getElementById("inputsearch")
 const searchData = document.getElementById("searchData")
 const thrillsec_childdiv = document.querySelectorAll("#thrilling>div")
+let access_token = JSON.parse(localStorage.getItem("access_token")) || null
+
+const admin= document.getElementById("admin")
+if(access_token){
+    admin.innerHTML=`
+    <p>${access_token.userName}</p>
+    <p>(logout)</p>
+    `
+    // admin.style.color="#ff5757"
+    // admin.style.gap="3px"
+}
+
 searchData.innerHTML=""
 let bag=[]
 let fetchd= async()=>{
@@ -38,5 +50,8 @@ function searchrender(data){
         `
     }).join("")}`
 }
+admin.addEventListener('click',()=>{
+    window.location.assign("../signuppage/signin.html")
+})
 
 // console.log(thrillsec_childdiv[0].attributes.name.value=="hello1")
