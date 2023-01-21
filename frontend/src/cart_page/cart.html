@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="product.css">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="../navbar/navbar.css">
     <link rel="stylesheet" href="../footer/footer.css">
     <link
@@ -30,7 +30,7 @@
                         <img src="https://www.dollartree.com/file/general/DT-icon-phone-white.svg" alt="phone">
                         <div>
                             <p>Order By Phone 1-877-530-TREE</p>
-                            <a href="">(Call Center Hours)</a>
+                            <a href="#">(Call Center Hours)</a>
                         </div>
                     </div>
                 </div>
@@ -106,76 +106,49 @@
             </ul>
         </div>
     </header>
-    <main id="mainsection" class="container">
-        <div id="left">
-            <div id="ratings">
-                <p>AVERAGE RATING AND UP</p>
-                <hr>
+    <main class="container">
+        <div id="cartdata">
+            <div>
+                <img src="https://www.dollartree.com/ccstore/v1/images/?source=/file/v3221598094008927857/products/318606.jpg&height=100&width=100" alt="">
+                <h4>abc</h4>
                 <div>
-                    <input type="checkbox" value="5">
-                    <div>
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                    </div>
                 </div>
-                <div>
-                    <input type="checkbox" value="4">
-                    <div>
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                    </div>
-                </div>
-                <div>
-                    <input type="checkbox" value="3">
-                    <div>
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                    </div>
-                </div>
-                <div>
-                    <input type="checkbox" value="2">
-                    <div>
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                    </div>
-                </div>
-                <div>
-                    <input type="checkbox" value="1">
-                    <div>
-                        <img src="../images/golden.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                        <img src="../images/white.png" alt="stars">
-                    </div>
-                </div>
-            </div>
-            <div id="material">
+                <p>price</p>
+                <button id="delete">Delete</button>
             </div>
         </div>
-        <div id="right">
-            <h1>Candleholders</h1>
-            <p>Find the perfect base for your favorite candles and add an extra touch of style to your home or party for less with our affordable selection of trendy candleholders.</p>
-            <label>Sort By</label>
-            <select name="options" id="options">
-                <option value="">Relevance</option>
-                <option value="lth">Low to High Price</option>
-                <option value="htl">High to Low Price</option>
-            </select>
-            <div id="products">
-
+        <div id="lowercart">
+            <div id="dummy">
+                <p>In-Store Estimated Pick-Up dates are valid for orders placed before 9:30 p.m. ET.
+                    <br>
+                    <br>
+    If your order is placed after 9:30 p.m. ET, the Estimated Pick-Up date noted on your Order Confirmation email is not guaranteed and could vary. Once your order has been shipped, your Shipment Confirmation email will include the confirmed Estimated Pick-Up date.</p>
+            </div>
+            <div class="orderSummery">
+                <h1>Order Summary</h1>
+                <div>
+                    <p id="promocode">+Add Promo Code</p>
+                    <input type="text" id="promo_code" class="codeinput">
+                        <button class="codeinput" id="apply">Apply</button>
+                    <div>
+                            <!--append option  -->
+                    </div>
+                    <hr>
+                    <div>
+                        <p>Items In Your Cart: $<span id="amount">0</span></p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>Discount Total : $<span id="dicount">0</span></p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>Shipping cost : $ <span>9.9</span></p>
+                    </div>
+                    <hr>
+                    <div>ESTIMATED ORDER TOTAL : $<span id="total_bill">0</span></div>
+                    <button>Proceed to Checkout</button>
+                </div>
             </div>
         </div>
     </main>
@@ -238,6 +211,4 @@
     </footer>
 </body>
 </html>
-<script src="../navbar/search.js"></script>
-<script src="product.js"></script>
-<script src="../cart_page/cart.js"></script>
+<script src="cart.js"></script>

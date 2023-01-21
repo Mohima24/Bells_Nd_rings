@@ -20,7 +20,7 @@ a{
 }
 .container{
     width: 90%;
-    margin:auto;
+    margin:0 auto;
 }
 .flex{
     display: flex;
@@ -99,6 +99,9 @@ a{
 }
 #admin{
     grid-area: 1/12/1/13;
+}
+#admin>p:first-child{
+    color: #ff5757;
 }
 #cart {
     grid-area: 1/13/1/14;

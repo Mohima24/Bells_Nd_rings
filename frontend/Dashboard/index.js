@@ -1,4 +1,5 @@
 const container= document.getElementById("container")
+// let access_token = JSON.parse(localStorage.getItem("access_token"))
 
 const render = async()=>{
     try{
@@ -27,3 +28,4 @@ function renderData(data){
     }).join("")}`
 }
 render()
+

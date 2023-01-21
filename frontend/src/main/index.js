@@ -8,6 +8,7 @@ for(let i=0;i<thrillingdiv.length;i++){
         window.location.assign("../productpage/productpage.html")
     })    
 }
+
 // console.log(thrillingdiv[0].attributes.name.value)
 // .attributes.name.value
 // async function

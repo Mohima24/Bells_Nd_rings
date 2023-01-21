@@ -2,13 +2,21 @@ const products = document.getElementById("products")
 const options = document.getElementById("options")
 const material = document.getElementById("material")
 const ratings= document.querySelectorAll('#ratings>div>input')
-const value = sessionStorage.getItem("ptype") || "Calendars & Planners"
-let url=`http://localhost:6060/products/?ptype=${value}`
+const righth = document.querySelector("#right>h1")
 
+
+const value = sessionStorage.getItem("ptype") || "Calendars & Planners"
+
+righth.innerText = `${value}`
+// console.log(righth)
+
+let url=`http://localhost:6060/products/?ptype=${value}`
+let arr=[]
 const render = async()=>{
     try{
         let fetchd= await fetch(url)
         let data = await fetchd.json()
+        arr=data
         renderData(data)
         reducefun(data)
     }
@@ -42,7 +50,7 @@ options.addEventListener('change',()=>{
 function rating (){
     for(let i=0;i<ratings.length;i++){
         ratings[i].addEventListener('click',(e)=>{
-            url=`http://localhost:6060/products/?ptype=${value}&rating=${e.target.value}&sort=1`
+            url=`http://localhost:6060/products/?ptype=${value}&rating=${e.target.value}`
 
             const render = async()=>{
                 try{
@@ -81,18 +89,30 @@ function reducefun(data){
         return acc
     },[])
     let newdata = reducedata.reduce((acc,el)=>{
-        acc[el]=1
+        let trims= el.trim().toLowerCase()
+        acc[trims]=1
         return acc
     },{})
+    // console.log(newdata)
     material.innerHTML=`<p>MATERIAL BASE</p> <hr>
     ${forinl(newdata).map((el)=>{
         return `
         <div>
-            <input type="checkbox"></input>
+            <input value=${el} type="checkbox"></input>
             <label>${el}</label>
         </div>
         `
     }).join("")}`
+
+    let childdiv=document.querySelectorAll("#material>div>input")
+    for(let i=0;i<childdiv.length;i++){
+        childdiv[i].addEventListener('click',(e)=>{
+            let newData= arr.filter((el)=>{
+                return el.material.toLowerCase().trim()==e.target.value.toLowerCase().trim()
+            })
+            renderData(newData)
+        })
+    }
 }
 function forinl(reducedata){
     let arr=[]
@@ -106,7 +126,7 @@ function renderData(data){
 
     products.innerHTML=`${data.map((el)=>{
             return `
-                <div>
+                <div data-id=${el._id}>
                     <img src=${el.img}></img>
                     <div>${icon(el.rating)}<p>${el.rating}</p></div>
                     <h3>${el.name}</h3>
@@ -116,20 +136,28 @@ function renderData(data){
                 </div>
                 `
         }).join("")}`
+
+        const productsel= document.querySelectorAll("#products>div")
+        for(let i=0;i<productsel.length;i++){
+            productsel[i].addEventListener('click',()=>{
+
+                const idData = async()=>{
+                    try{
+                        let fetchd= await fetch(`http://localhost:6060/products/${productsel[i].dataset.id}`)
+                        let data = await fetchd.json()
+                        localStorage.setItem('oneEl',JSON.stringify(data))
+                        window.location.assign("../visibleproduct/visible.html")
+                        console.log(data)
+                    }
+                    catch(err){
+                        console.log(err)
+                    }
+                }
+                idData()
+            })
+        }
+        // console.log(productsel)
 }
+
 render()
 
-function materialData (data){
-    const render = async()=>{
-        try{
-            let fetchd= await fetch(url)
-            let data = await fetchd.json()
-            renderData(data)
-            reducefun(data)
-        }
-        catch(err){
-            console.log(err)
-        }
-    }
-}
-// &rating=${ratingsdata()}
