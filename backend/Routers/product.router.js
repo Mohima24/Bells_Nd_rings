@@ -9,20 +9,43 @@ productRouter.get("/all",async(req,res)=>{
         res.send(data)
 })
 productRouter.get("/",async(req,res)=>{
-    const {ptype,name,sort,limit,page} = req.query;
+    const {ptype,rating,sort,limit,page} = req.query;
     let queries = {};
-    if(queries.name == undefined && queries.ptype==undefined){
+    
+    if(rating == undefined && ptype==undefined){
         queries={}
-    }else if(queries.name == undefined){
+    }else if(rating==undefined ||rating==null|| rating==""){
         queries.ptype = { '$regex': ptype, '$options': 'i' };
+    }else if(!ptype){
+        if(rating==5){
+            queries.rating={$eq:5.0}
+        }else if(rating==4){
+            queries["$and"]=[{rating:{$gte:4.0}}, {rating:{$lte:5.0}}]
+        }else if(rating==3){
+            queries["$and"]=[{rating:{$gte:3.0}}, {rating:{$lte:5.0}}]
+        }else if(rating==2){
+            queries["$and"]=[{rating:{$gte:2.0}}, {rating:{$lte:5.0}}]
+        }else if(rating==1){
+            queries["$and"]=[{rating:{$gte:1.0}}, {rating:{$lte:5.0}}]
+        }
     }else{
-        queries.name = { '$regex': name, '$options': 'i' };
+        if(rating==5){
+            queries["$and"]=[{rating:{$eq:5.0}},{ptype:{ '$regex': ptype, '$options': 'i' }}]
+        }else if(rating==4){
+            queries["$and"]=[{rating:{$gte:4.0}},{rating:{$lte:5.0}},{ptype:{ '$regex': ptype, '$options': 'i' }}]
+        }else if(rating==3){
+            queries["$and"]=[{rating:{$gte:3.0}},{rating:{$lte:5.0}},{ptype:{ '$regex': ptype, '$options': 'i' }}]
+        }else if(rating==2){
+            queries["$and"]=[{rating:{$gte:2.0}},{rating:{$lte:5.0}},{ptype:{ '$regex': ptype, '$options': 'i' }}]
+        }else if(rating==1){
+            queries["$and"]=[{rating:{$gte:1.0}},{rating:{$lte:5.0}},{ptype:{ '$regex': ptype, '$options': 'i' }}]
+        }
     }
     let sorting = {}
     if(sort ==1){
-        sorting[sort] = 1;
-    }else if(sort == 0){
-        sorting[sort] = 1
+        sorting.price = 1;
+    }else if(sort == -1){
+        sorting.price = -1
     }
     let limits=0
     if(limit!=undefined){
