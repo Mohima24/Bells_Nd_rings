@@ -8,6 +8,10 @@ productRouter.get("/all",async(req,res)=>{
         let data = await ProductModel.find({}).limit(5)
         res.send(data)
 })
+productRouter.get("/render",async(req,res)=>{
+    let data = await ProductModel.find()
+    res.send(data)
+})
 productRouter.get("/:id",async(req,res)=>{
     let ID = req.params.id
     let data = await ProductModel.findOne({_id:ID})
@@ -61,9 +65,13 @@ productRouter.get("/",async(req,res)=>{
 })
 productRouter.post("/post",async(req,res)=>{
     const {name,rating,price,material,adminID,adminName,img,ptype}= req.body;
-    const postData = new ProductModel({name,rating,price,material,adminID,adminName,img,ptype})
-    await postData.save()
-    res.send("User has been posted posts")
+    try{
+        const postData = new ProductModel({name,rating,price,material,adminID,adminName,img,ptype})
+        await postData.save()
+        res.send(statusbar=200)
+    }catch(err){
+        res.send(err)
+    }
 })
 
 productRouter.patch("/update/:id",async(req,res)=>{
