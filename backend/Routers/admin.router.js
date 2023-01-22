@@ -43,11 +43,11 @@ adminRouter.post("/login",async(req,res)=>{
                     const token = jwt.sign({"adminID": data._id,"adminName":data.name}, process.env.adminkey,{expiresIn:"2h"})
                     res.send({"msg":"Admin logIn Successfully","token":token})
                 }else{
-                    res.send({"msg":"Please log-in first"})
+                    res.send(statusbar=400)
                 }
             })
         }else{
-            res.send({"msg":"Please log-in first"})
+            res.send(statusbar=400)
         }
     }
     catch(err){
