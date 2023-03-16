@@ -10,7 +10,7 @@ const value = sessionStorage.getItem("ptype") || "Calendars & Planners"
 righth.innerText = `${value}`
 // console.log(righth)
 
-let url=`http://localhost:6060/products/?ptype=${value}`
+let url=`https://busy-gold-scarab-vest.cyclic.app/products/?ptype=${value}`
 let arr=[]
 const render = async()=>{
     try{
@@ -27,11 +27,11 @@ const render = async()=>{
 
 options.addEventListener('change',()=>{
     if(options.value=="lth"){
-        url=`http://localhost:6060/products/?ptype=${value}&sort=1`
+        url=`https://busy-gold-scarab-vest.cyclic.app/products/?ptype=${value}&sort=1`
     }else if(options.value=="htl"){
-        url=`http://localhost:6060/products/?ptype=${value}&sort=-1`
+        url=`https://busy-gold-scarab-vest.cyclic.app/products/?ptype=${value}&sort=-1`
     }else{
-        url=`http://localhost:6060/products/?ptype=${value}`
+        url=`https://busy-gold-scarab-vest.cyclic.app/products/?ptype=${value}`
     }
 
     const render = async()=>{
@@ -50,7 +50,7 @@ options.addEventListener('change',()=>{
 function rating (){
     for(let i=0;i<ratings.length;i++){
         ratings[i].addEventListener('click',(e)=>{
-            url=`http://localhost:6060/products/?ptype=${value}&rating=${e.target.value}`
+            url=`https://busy-gold-scarab-vest.cyclic.app/products/?ptype=${value}&rating=${e.target.value}`
 
             const render = async()=>{
                 try{
@@ -143,7 +143,7 @@ function renderData(data){
 
                 const idData = async()=>{
                     try{
-                        let fetchd= await fetch(`http://localhost:6060/products/${productsel[i].dataset.id}`)
+                        let fetchd= await fetch(`https://busy-gold-scarab-vest.cyclic.app/products/${productsel[i].dataset.id}`)
                         let data = await fetchd.json()
                         localStorage.setItem('oneEl',JSON.stringify(data))
                         window.location.assign("../visibleproduct/visible.html")

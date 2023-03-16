@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    color: #39FF14;
+    text-decoration: none;
+}
+main{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background-color: #28282B;
+    color: #39FF14;
+    padding: 5% 0;
+    text-align: center;
+}
+#flexside{
+    display: flex;
+    padding: 5% 0;
+}
+#optionside{
+    width: 18%;
+    padding-left: 2%;
+}
+#dataside{
+    width: 79%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 20px;
+    text-align: left;
+}
+#dataside>div{
+    width: 27%;
+    padding: 2% 2%;
+    box-shadow: rgba(105, 231, 113, 0.24) 0px 3px 8px;
+}
+#dataside>div>img{
+    width: 80%;
+}
+
+/* ---------------optionside */
+
+#optionside>ul>li{
+    padding: 3% 0;
+    margin: 4% 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: 1px solid #4df03170;
+    list-style: none;
+    text-align: center;
+}
+#optionside>ul>li:hover{
+    box-shadow: rgba(105, 231, 113, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+
+button{
+    width: 30%;
+    padding: 10px 0;
+    margin: 1% 0;
+    background-color: #39FF14;
+    color: #28282B;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+input[type="search"]{
+    width: 30%;
+    padding: 10px 0;
+    margin: auto;
+}
+
+#pagination-wrapper{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+#pagination-wrapper button{
+    width: 10%;
+    padding: 10px 0;
+    margin: 1% 0;
+}

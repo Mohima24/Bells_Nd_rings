@@ -1,6 +1,7 @@
 const form= document.getElementById("register")
 const admin = document.getElementById("admin")
-let access_token = JSON.parse(localStorage.getItem("access_token"))
+
+let access_token = JSON.parse(localStorage.getItem("admin_token"))
 form.addEventListener("submit",async(e)=>{
     e.preventDefault()
     try{
@@ -8,7 +9,7 @@ form.addEventListener("submit",async(e)=>{
             email:email.value,
             pass:pass.value
         }
-        let login_rqst = await fetch("https://busy-gold-scarab-vest.cyclic.app/users/login",{
+        let login_rqst = await fetch("https://busy-gold-scarab-vest.cyclic.app/admins/login",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -17,17 +18,17 @@ form.addEventListener("submit",async(e)=>{
         })
         if(login_rqst.ok){
             let token= await login_rqst.json()
-            localStorage.setItem("access_token",JSON.stringify(token))
-            alert("User has been sucessfully log in")
+            localStorage.setItem("admin_token",JSON.stringify(token))
+            alert("Admin has been sucessfully log in")
             // admin.innerHTML=token.userName;
-            window.location.assign("../../index.html")
+            window.location.assign("../adminmain/main.html")
         }else{
-            alert("User not found Please login First")
+            alert("Admin not found Please login First")
         }
 
     }
     catch(err){
-        alert("User not found Please login")
+        alert("Admin not found Please login")
         console.log(err)
     }
 

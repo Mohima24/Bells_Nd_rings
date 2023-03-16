@@ -1,9 +1,8 @@
-const cartnav= document.getElementById("cart")
-let lsdata =JSON.parse(localStorage.getItem('lsdata'))|| []
 
-cartnav.addEventListener("click",()=>{
-    window.location.assign("../cart_page/cart.html")
-})
+const lsdata =JSON.parse(localStorage.getItem('lsdata'))|| []
+const amountall = document.getElementById("amount")
+const total_bill = document.getElementById("total_bill")
+const proceed= document.getElementById("proceedtocheckout")
 
 let promo= document.getElementById('promocode')
 promo.addEventListener('click',function(){
@@ -56,9 +55,21 @@ addtocart()
             let filter= lsdata.filter((el)=>{
                 return el._id==selecttg[i].dataset.id
             })
+            let diff = Math.abs(e.target.value - filter[0].quantity)
             let x = +e.target.value* filter[0].price
             q= +e.target.value
             tot[i].innerText=`$ ${x}`
+
+            function totalamt(){
+                let data = lsdata.reduce((acc,el)=>{
+                    acc=acc+el.total
+                    return acc
+                },0)
+                amountall.innerText=data
+                return data
+            }
+            // let totalamt=totalamt()
+            total_bill.innerText = +totalamt()+9.9 + diff
         })
     }
 
@@ -76,16 +87,32 @@ function deleteData(index){
     delData.splice(index,1)
     localStorage.setItem('lsdata',JSON.stringify(delData))
     addtocart()
+
+    function totalamt(){
+        let data = lsdata.reduce((acc,el)=>{
+            acc=acc+el.total
+            return acc
+        },0)
+        amountall.innerText=data
+        return data
+    }
+    // let totalamt=totalamt()
+    total_bill.innerText = +totalamt()+9.9
 }
 
 function totalamt(){
     let data = lsdata.reduce((acc,el)=>{
-        acc=acc+el
+        acc=acc+el.total
         return acc
-    },)
-    console.log(data)
+    },0)
+    amountall.innerText=data
+    return data
 }
+// let totalamt=totalamt()
+total_bill.innerText = +totalamt()+9.9
 totalamt()
+
+
 function quantityrender(el){
     if(el==24){
        return`
@@ -116,3 +143,7 @@ function quantityrender(el){
         `
     }
 }
+
+proceed.addEventListener("click",()=>{
+    window.location.assign("../payment_page/payment.html")
+})
