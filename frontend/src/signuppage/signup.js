@@ -8,7 +8,7 @@ form.addEventListener("submit",async(e)=>{
             phone:number.value,
             pass:pass.value
         }
-        let register_rqst = await fetch("http://localhost:6060/users/register",{
+        let register_rqst = await fetch("https://busy-gold-scarab-vest.cyclic.app/users/register",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

@@ -8,7 +8,7 @@ form.addEventListener("submit",async(e)=>{
             email:email.value,
             pass:pass.value
         }
-        let login_rqst = await fetch("http://localhost:6060/users/login",{
+        let login_rqst = await fetch("https://busy-gold-scarab-vest.cyclic.app/users/login",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -20,7 +20,7 @@ form.addEventListener("submit",async(e)=>{
             localStorage.setItem("access_token",JSON.stringify(token))
             alert("User has been sucessfully log in")
             // admin.innerHTML=token.userName;
-            window.location.assign("../main/index.html")
+            window.location.assign("../../index.html")
         }else{
             alert("User not found Please login First")
         }
