@@ -1,0 +1,67 @@
+#optionside>ul>li{
+    padding: 3% 0;
+    margin: 4% 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: 1px solid #4df03170;
+    list-style: none;
+    text-align: center;
+}
+a{
+    color: #39FF14;
+    text-decoration: none;
+}
+#optionside>ul>li:hover{
+    box-shadow: rgba(105, 231, 113, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+main{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background-color: #28282B;
+    display: flex;
+    color: #39FF14;
+    padding: 5% 0;
+}
+#optionside{
+    width: 18%;
+    padding-left: 2%;
+}
+
+#form{
+    font-size: 1.3rem;
+    font-weight: 500px;
+    margin: auto;
+    width: 40%;
+}
+input[type="text"],
+input[type="number"]{
+    width: 100%;
+    padding: 10px 0;
+    margin: 1% 0;
+}
+#form>form>div{
+    margin:2% 0;
+}
+input[type="submit"]{
+    width: 30%;
+    padding: 10px 0;
+    margin: 1% 0;
+    background-color: #39FF14;
+    color: #28282B;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="submit"]:hover{
+    box-shadow: rgba(105, 231, 113, 0.24) 0px 3px 8px;
+}

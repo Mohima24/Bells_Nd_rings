@@ -36,6 +36,7 @@ a{
     display: flex;
     align-items: center;
     text-align: center;
+    cursor: pointer;
 }
 #leftside>div>img{
     width: 10%;
@@ -54,6 +55,7 @@ a{
     display: flex;
     align-items: center;
     text-align: center;
+    cursor: pointer;
 }
 #rightside>div>img{
     width: 10%;

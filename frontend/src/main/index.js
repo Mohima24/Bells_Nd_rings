@@ -5,7 +5,7 @@ for(let i=0;i<thrillingdiv.length;i++){
     thrillingdiv[i].addEventListener("click",(e)=>{
         let value = thrillingdiv[i].attributes.name.value
         sessionStorage.setItem("ptype",value)
-        window.location.assign("../productpage/productpage.html")
+        window.location.assign("./src/productpage/productpage.html")
     })    
 }
 
