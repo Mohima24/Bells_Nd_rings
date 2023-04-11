@@ -288,7 +288,7 @@ userRoute.post("/login", async (req, res) => {
     }
   }
   catch(err){
-    res.send(err)
+    res.send({"message":"while login"})
   }
 })
 // ----------------------------------------------------------log in------------------------------------------
