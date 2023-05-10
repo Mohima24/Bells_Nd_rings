@@ -60,7 +60,7 @@ DELETE    /products/delete/:id
 ---
 
 #### user model :-
-
+```
 {
   "firstName":"String",
   "lastName":"String",
@@ -68,10 +68,10 @@ DELETE    /products/delete/:id
   "email":"abc@gmail.com",
   "role":"seller" || "admin" || default="customer"
 }
-
+```
 #### product model :-
 
-
+```
 {
     "name":"String",
     "rating":Number,
@@ -81,7 +81,7 @@ DELETE    /products/delete/:id
     "img":"String",
     "ptype":"String"
 }  
-
+```
 
 ## More Project Details :-
 
