@@ -85,7 +85,7 @@ exports.queryData = async(req,res)=>{
 exports.postData = async(req,res)=>{
     const {name,rating,price,material,adminID,adminName,img,ptype}= req.body;
     try{
-        const postData = new ProductModel({name,rating,price,material,adminID,adminName,img,ptype})
+        const postData = await new ProductModel({name,rating,price,material,adminID,adminName,img,ptype})
         await postData.save()
         res.send(statusbar=200)
     }catch(err){
@@ -96,33 +96,42 @@ exports.postData = async(req,res)=>{
 exports.updateData = async(req,res)=>{
     const id= req.params.id;
     let data = await ProductModel.findOne({_id:id})
-    let reqbody= req.body
-    let reqID = req.body.adminID
+    let reqbody= req.body;
+    let reqID = req.body.userID;
+    let role = req.body.userRole;
+
     if(data){
-        let dataId = data.adminID
-        if(reqID==dataId){
+
+        if(reqID==data.sellerID || role=="admin"){
             await ProductModel.findByIdAndUpdate({_id:id},reqbody)
             res.send("Data has been successfully updated")
         }else{
             res.send("You are not authorized")
         }
+
     }else{
         res.send("Data is not present")
     }
 }
 
 exports.deleteData = async(req,res)=>{
+
     const id= req.params.id;
     let data = await ProductModel.findOne({_id:id})
-    let reqID = req.body.userID
+    let reqID = req.body.userID;
+    let role = req.body.userRole;
+
     if(data){
-        let dataId = data.userID
-        if(reqID==dataId){
+
+        if(reqID==data.sellerID || role=="admin"){
+
             await ProductModel.findByIdAndDelete({_id:id})
             res.send("Data has been successfully deleted")
+
         }else{
             res.send("You are not authorized")
         }
+
     }else{
         res.send("Data is not present")
     }

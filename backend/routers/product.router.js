@@ -2,14 +2,15 @@ const express = require("express")
 require("dotenv").config()
 const productController = require("../controllers/")
 const productRouter = express.Router()
-
+const authorized = require("../middleware/authorise")
+const {authentication} = require("../middleware/authenticate")
 productRouter.get("/all",productController.getallProducts)
 productRouter.get("/render",productController.limitedData)
 productRouter.get("/:id",productController.findbyIDProducts)
 productRouter.get("/",productController.queryData)
-productRouter.post("/post",productController.postData)
-productRouter.patch("/update/:id",productController.updateData)
-productRouter.delete("/delete/:id",productController.deleteData)
+productRouter.post("/post",authentication,authorized(["admin","seller"]),productController.postData)
+productRouter.patch("/update/:id",authentication,authorized(["admin","seller"]),productController.updateData)
+productRouter.delete("/delete/:id",authentication,authorized(["admin","seller"]),productController.deleteData)
 
 
 module.exports={

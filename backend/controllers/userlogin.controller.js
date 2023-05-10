@@ -25,9 +25,9 @@ exports.emaillogin = async (req, res) => {
               const access_token = jwt.sign({userID:findeuser._id,userRole:findeuser.role},process.env.userkey,{expiresIn:"30s"})
               const refresh_token = jwt.sign({userID:findeuser._id,userRole:findeuser.role},process.env.user_refresh_token,{expiresIn:"30d"})
   
-              res.cookie("normal_token",access_token,{httpOnly:true,maxAge:60*1000})
+              // res.cookie("normal_token",access_token,{httpOnly:true,maxAge:60*1000})
   
-              res.cookie("refresh_token",refresh_token,{httpOnly:true,maxAge:60000*7})
+              // res.cookie("refresh_token",refresh_token,{httpOnly:true,maxAge:60000*7})
               res.send({"message":"login successfully",access_token,refresh_token})
             }else{
               res.send(err)

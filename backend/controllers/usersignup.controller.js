@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
 })
 
 exports.signupuserMobile =  async (req, res) => {
-    const { firstName, lastName, password, mobile } = req.body;
+    const { firstName, lastName, password, mobile , role} = req.body;
     if (password == "") {
         return res.json({ status: "FAILED", "messege": "Empty Password" })
     }
@@ -40,7 +40,7 @@ exports.signupuserMobile =  async (req, res) => {
                     res.send("bcrypt err")
                 }else{
                     const user = new Usermodel({
-                      firstName, lastName, mobile, password:hash 
+                      firstName, lastName, mobile, password:hash ,role
                     })
                     user.save()
                     .then((result)=>{
@@ -53,7 +53,7 @@ exports.signupuserMobile =  async (req, res) => {
 }
 
 exports.signupemail = async (req, res) => {
-    const { firstName, lastName, password, email } = req.body;
+    const { firstName, lastName, password, email ,role } = req.body;
 
     if (password == "") {
         return res.json({ status: "FAILED", "messege": "Empty Password" })
@@ -72,7 +72,7 @@ exports.signupemail = async (req, res) => {
                     res.send("bcrypt err")
                 }else{
                     const user = new Usermodel({
-                      firstName, lastName, email, password:hash 
+                      firstName, lastName, email, password:hash ,role
                     })
                     user.save()
                     .then((result)=>{
