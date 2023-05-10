@@ -32,6 +32,8 @@
 ---
 <br/>
 
+## API Routes :
+
 #### User Routes :-
 
 ```
@@ -55,3 +57,13 @@ POST      /products/upload
 PATCH     /products/update/:id
 DELETE    /products/delete/:id
 ```
+---
+
+## More Project Details :-
+
+- Type : Individual Project
+- Duration of Project - 5 Days
+
+---
+<br/>
+<h3 align="center" >Thank you for your Time 💝</h3>
