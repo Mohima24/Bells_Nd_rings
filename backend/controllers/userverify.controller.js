@@ -7,6 +7,7 @@ exports.userOtpverify = async(req,res)=>{
     try{
 
         let {userID,otp} = req.body;
+
         if(!userID || !otp){
             res.status(400).send("Verification went wrong")
         }else{
@@ -18,9 +19,12 @@ exports.userOtpverify = async(req,res)=>{
             }else{
                 const expiresAt = userotpverification[0].expiresAt;
                 const sendotp = userotpverification[0].otp;
+                
                 if(expiresAt < Date.now()){
+
                     await UserOTPVerification.deleteMany({userID})
                     res.status(500).send("Code has been expired")
+
                 }else{
                   bcrypt.compare(otp, sendotp, async(err, result) => {
                       if(!result){

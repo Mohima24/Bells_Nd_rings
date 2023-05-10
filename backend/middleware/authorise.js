@@ -1,6 +1,6 @@
 const authorized = (role)=>{
     return (req,res,next)=>{
-        const bodyrole = req.role;
+        const bodyrole = req.body.userRole;
         if(role.includes(bodyrole)){
             next();
         }else{

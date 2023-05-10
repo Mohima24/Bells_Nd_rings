@@ -11,7 +11,7 @@ exports.emaillogin = async (req, res) => {
       if(email){
 
         const findeuser = await Usermodel.findOne({ email })
-
+        
         if(findeuser.verify==false){
             res.status(403).send({"msg":"user not register"})
             return 
@@ -21,8 +21,8 @@ exports.emaillogin = async (req, res) => {
           const hashpass= findeuser.password;
   
           bcrypt.compare(password, hashpass, async(err, result) => {
-            if(!result){
-              const access_token = jwt.sign({userID:findeuser._id,userRole:findeuser.role},process.env.userkey,{expiresIn:"30s"})
+            if(result){
+              const access_token = jwt.sign({userID:findeuser._id,userRole:findeuser.role},process.env.userkey,{expiresIn:"7d"})
               const refresh_token = jwt.sign({userID:findeuser._id,userRole:findeuser.role},process.env.user_refresh_token,{expiresIn:"30d"})
   
               // res.cookie("normal_token",access_token,{httpOnly:true,maxAge:60*1000})
@@ -30,7 +30,8 @@ exports.emaillogin = async (req, res) => {
               // res.cookie("refresh_token",refresh_token,{httpOnly:true,maxAge:60000*7})
               res.send({"message":"login successfully",access_token,refresh_token})
             }else{
-              res.send(err)
+
+              res.status(403).send({"msg":"error while decrypt"})
             }
           })
   

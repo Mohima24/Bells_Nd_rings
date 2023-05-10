@@ -7,17 +7,17 @@ const authentication=(req,res,next)=>{
         res.send({"msg":"please log in"})
         return
     }
-    const decode= jwt.verify(token,process.env.adminkey);
+    const decode= jwt.verify(token,process.env.userkey);
     if(!decode){
         res.send({"msg":"please log in"})
         return
-    }
-    const userID = decode.userID;
-    const userRole = decode.userRole;
-
-    req.body.userID=userID;
-    req.body.userRole = userRole;
-    next()   
+    }else{
+        const userID = decode.userID;
+        const userRole = decode.userRole;
+        req.body.userID=userID;
+        req.body.userRole = userRole;
+        next() 
+    }  
 }
 
 module.exports={

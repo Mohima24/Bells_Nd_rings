@@ -59,6 +59,30 @@ DELETE    /products/delete/:id
 ```
 ---
 
+#### user model :-
+
+{
+  "firstName":"String",
+  "lastName":"String",
+  "password":"String",
+  "email":"abc@gmail.com",
+  "role":"seller" || "admin" || default="customer"
+}
+
+#### product model :-
+
+
+{
+    "name":"String",
+    "rating":Number,
+    "price":Number,
+    "material":"String",
+    "sellerID":"String",
+    "img":"String",
+    "ptype":"String"
+}  
+
+
 ## More Project Details :-
 
 - Type : Individual Project
@@ -67,3 +91,6 @@ DELETE    /products/delete/:id
 ---
 <br/>
 <h3 align="center" >Thank you for your Time 💝</h3>
+
+
+<!-- eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDViZjI3NWU5YmJhZDNiY2QyYjRkY2IiLCJ1c2VyUm9sZSI6InNlbGxlciIsImlhdCI6MTY4Mzc0ODU1MywiZXhwIjoxNjg0MzUzMzUzfQ.2EpUgMunQY5KP0d17wok2KgF-VPhlMKvJqUbtFbx0Q8 -->

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+    
+    fetchfun()
+    let arr = []
+    async function fetchfun(){
+        try{
+            const fetchData = await fetch('http://localhost:6060/products/all');
+            const res = await fetchData.json()
+            arr=[...res]
+            render(arr)
+            console.log(arr)
+        }catch(err){
+            console.log(err)
+        }
+    }
+    function render(arr){
+
+        const body = document.querySelector('body');
+        body.innerHTML = `<div>
+            ${arr.map((el)=>{
+                return `<div>
+                    <img src=${el.img} alt="">
+                    <p>${el.name}</p>
+                    <p>${el.ptype}</p>
+                    <p>${el.material}</p>
+                    <p>${el._id}</p>
+                </div>`
+            })}
+            </div>`
+
+    }
+
+</script>

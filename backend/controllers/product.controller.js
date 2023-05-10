@@ -12,7 +12,7 @@ exports.limitedData = async(req,res)=>{
 exports.findbyIDProducts = async(req,res)=>{
     let ID = req.params.id
     let data = await ProductModel.findOne({_id:ID})
-    res.send(data)
+    res.send("hello")
 }
 
 exports.queryData = async(req,res)=>{
@@ -83,11 +83,11 @@ exports.queryData = async(req,res)=>{
 }
 
 exports.postData = async(req,res)=>{
-    const {name,rating,price,material,adminID,adminName,img,ptype}= req.body;
+    const {name,rating,price,material,userID,img,ptype}= req.body;
     try{
-        const postData = await new ProductModel({name,rating,price,material,adminID,adminName,img,ptype})
+        const postData = await new ProductModel({name,rating,price,material,sellerID:userID,img,ptype})
         await postData.save()
-        res.send(statusbar=200)
+        res.send({"msg":"Data has upload"})
     }catch(err){
         res.send(err)
     }
@@ -100,17 +100,21 @@ exports.updateData = async(req,res)=>{
     let reqID = req.body.userID;
     let role = req.body.userRole;
 
-    if(data){
+    try{
+        if(data){
 
-        if(reqID==data.sellerID || role=="admin"){
-            await ProductModel.findByIdAndUpdate({_id:id},reqbody)
-            res.send("Data has been successfully updated")
+            if(reqID==data.sellerID || role=="admin"){
+                await ProductModel.findByIdAndUpdate({_id:id},reqbody)
+                res.send("Data has been successfully updated")
+            }else{
+                res.send("You are not authorized")
+            }
+    
         }else{
-            res.send("You are not authorized")
+            res.send("Data is not present")
         }
-
-    }else{
-        res.send("Data is not present")
+    }catch(err){
+        res.send(err)
     }
 }
 
