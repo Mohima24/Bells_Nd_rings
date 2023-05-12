@@ -47,6 +47,8 @@ POST    /users/verifyotp
 GET     /users/getnewToken
 ```
 
+---
+
 #### Product Routes :-
 ```
 GET       /products/all
@@ -57,6 +59,18 @@ POST      /products/upload
 PATCH     /products/update/:id
 DELETE    /products/delete/:id
 ```
+
+---
+
+
+#### Orders Routes :-
+
+```
+GET       /orders/orderItems/agregate
+GET       /orders/orderItems/:userID
+Post      /orders/orderItems
+```
+
 ---
 
 #### user model :-
@@ -69,10 +83,9 @@ DELETE    /products/delete/:id
   "role":"seller" || "admin" || default="customer"
 }
 ```
-<<<<<<< HEAD
 
-=======
->>>>>>> 985b980e3e22995c50c218684a93d3adc4bad53c
+---
+
 #### product model :-
 
 ```
@@ -87,6 +100,26 @@ DELETE    /products/delete/:id
 }  
 ```
 
+---
+
+#### order model :-
+
+```
+
+  {
+    user: ObjectId(userID),
+    orderItems: [
+          {
+            product: ObjectId(productID),
+            quantity: Number
+          }  
+    ],
+  },
+
+```
+
+---
+
 ## More Project Details :-
 
 - Type : Individual Project
@@ -95,9 +128,4 @@ DELETE    /products/delete/:id
 ---
 <br/>
 <h3 align="center" >Thank you for your Time 💝</h3>
-<<<<<<< HEAD
-=======
 
-
-<!-- eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDViZjI3NWU5YmJhZDNiY2QyYjRkY2IiLCJ1c2VyUm9sZSI6InNlbGxlciIsImlhdCI6MTY4Mzc0ODU1MywiZXhwIjoxNjg0MzUzMzUzfQ.2EpUgMunQY5KP0d17wok2KgF-VPhlMKvJqUbtFbx0Q8 -->
->>>>>>> 985b980e3e22995c50c218684a93d3adc4bad53c

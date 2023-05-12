@@ -6,23 +6,41 @@ const orderRouter = express.Router();
 
 orderRouter.get("/orderItems/agregate",async(req,res)=>{
     const data = await Order.aggregate([
-        { $lookup: {  from: 'users',
-                      localField: 'user',
-                       foreignField: '_id',
-                       as: 'user'
-                    }
-        },
-        { $unwind: '$orderItems' },
-        {$lookup : {from : 'products', localField: 'orderItems.product', foreignField: '_id', as : 'product'}},
-        { $unwind: '$product' },
-        {$group : { _id: '$_id', user:{'$first':'$user'},products: {$push: '$product'}}}
+            { $lookup: {  from: 'users',
+                        localField: 'user',
+                        foreignField: '_id',
+                        as: 'user'
+                        }
+            },
+            { $unwind: '$orderItems' },
+            {$lookup : {from : 'products', localField: 'orderItems.product', foreignField: '_id', as : 'product'}},
+            { $unwind: '$product' },
+            {$group : { _id: '$_id', user:{'$first':'$user'},products: {$push: '$product'}}}
         ])
     res.send({data})
 })
 
-orderRouter.get("/orderItems",async(req,res)=>{
-    const data = await Order.find()
-    res.send({data})
+orderRouter.get("/orderItems/:userID",async(req,res)=>{
+    const userID = req.params.userID;
+    try{
+        const data = await Order.aggregate([
+                { $match: { $expr : { $eq: [ '$user' , { $toObjectId: userID } ] } } },
+                { $lookup: {  from: 'users',
+                    localField: 'user',
+                    foreignField: '_id',
+                    as: 'user'
+                    }
+                },
+                { $unwind: '$orderItems' },
+                {$lookup : {from : 'products', localField: 'orderItems.product', foreignField: '_id', as : 'product'}},
+                { $unwind: '$product' },
+                {$group : { _id: '$_id', user:{'$first':'$user'},products: {$push: '$product'}}}
+            ])
+        res.send({data})
+    }catch(err){
+        res.status(403).send({error:"details is not available",err})
+    }
+
 })
 
 orderRouter.post("/orderItems",authentication,async(req,res)=>{
