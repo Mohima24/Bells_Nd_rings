@@ -53,8 +53,9 @@ exports.phonelogin = async (req, res) => {
     try{
       const { mobile, password } = req.body;
       if(mobile){
+
         const findeuser = await Usermodel.findOne({ mobile })
-  
+
         if(findeuser){
 
             if(findeuser.verify==false){
@@ -65,9 +66,9 @@ exports.phonelogin = async (req, res) => {
           const hashpass= findeuser.password;
   
           bcrypt.compare(password, hashpass, async(err, result) => {
-            if(!result){
+            if(result){
   
-              const access_token = jwt.sign({userID:findeuser._id,userRole:findeuser.role},process.env.userkey,{expiresIn:"30s"})
+              const access_token = jwt.sign({userID:findeuser._id,userRole:findeuser.role},process.env.userkey,{expiresIn:"1d"})
               const refresh_token = jwt.sign({userID:findeuser._id,userRole:findeuser.role},process.env.user_refresh_token,{expiresIn:"30d"})
 
               res.send({"message":"login successfully",access_token,refresh_token})

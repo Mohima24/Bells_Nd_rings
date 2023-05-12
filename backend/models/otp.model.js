@@ -5,8 +5,11 @@ const otpSchema= mongoose.Schema({
     otp:String,
     createdAt:Date,
     expiresAt:Date
+},{
+    versionKey:false
 })
 const UserOTPVerification = mongoose.model("UserOTPVerification",otpSchema)
+
 module.exports = {
     UserOTPVerification
 }
