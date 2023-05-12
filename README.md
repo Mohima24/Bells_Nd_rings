@@ -69,7 +69,10 @@ DELETE    /products/delete/:id
   "role":"seller" || "admin" || default="customer"
 }
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> 985b980e3e22995c50c218684a93d3adc4bad53c
 #### product model :-
 
 ```
@@ -92,3 +95,9 @@ DELETE    /products/delete/:id
 ---
 <br/>
 <h3 align="center" >Thank you for your Time 💝</h3>
+<<<<<<< HEAD
+=======
+
+
+<!-- eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDViZjI3NWU5YmJhZDNiY2QyYjRkY2IiLCJ1c2VyUm9sZSI6InNlbGxlciIsImlhdCI6MTY4Mzc0ODU1MywiZXhwIjoxNjg0MzUzMzUzfQ.2EpUgMunQY5KP0d17wok2KgF-VPhlMKvJqUbtFbx0Q8 -->
+>>>>>>> 985b980e3e22995c50c218684a93d3adc4bad53c
