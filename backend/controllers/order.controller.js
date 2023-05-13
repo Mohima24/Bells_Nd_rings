@@ -116,7 +116,6 @@ exports.getUserOrderdetails = async(req,res)=>{
                 }
               }
             ])
-        // const data  = await Order.find({user:'645ac718b6f8448ef0e530b2'})
         res.send({data})
     }catch(err){
         res.status(403).send({error:"details is not available",err})
