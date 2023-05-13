@@ -9,4 +9,5 @@ const authorized = (role)=>{
     }
 }
 
+
 module.exports = authorized;

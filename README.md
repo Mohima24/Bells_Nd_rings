@@ -2,6 +2,8 @@
 
 - Deployed Webite = https://sage-crostata-a93786.netlify.app/
 
+---
+
  ## What is BellsNRibbons
  - An online e-commerce website, where user can buy cheap price good product.
  - We have 200+ products.
@@ -79,6 +81,7 @@ Post      /orders/orderItems
   "firstName":"String",
   "lastName":"String",
   "password":"String",
+  "mobile":Number
   "email":"abc@gmail.com",
   "role":"seller" || "admin" || default="customer"
 }

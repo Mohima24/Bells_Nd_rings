@@ -92,8 +92,7 @@ exports.phonelogin = async (req, res) => {
 
       }
     }catch(err){
-
-      throw Error({"message":"log in catch error"})
+      throw Error({"message":"log in catch error",err})
 
     }
     
