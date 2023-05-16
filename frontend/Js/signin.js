@@ -1,12 +1,16 @@
-const form= document.getElementById("register")
+const form1= document.getElementById("register1")
+const form2= document.getElementById("register2")
 const admin = document.getElementById("admin")
 let access_token = JSON.parse(localStorage.getItem("access_token"))
-form.addEventListener("submit",async(e)=>{
+
+form1.addEventListener("submit",async(e)=>{
     e.preventDefault()
     try{
+
         let userobj={
             email:email.value,
-            pass:pass.value
+            password:pass.value,
+
         }
         let login_rqst = await fetch("https://busy-gold-scarab-vest.cyclic.app/users/login",{
             method:"POST",

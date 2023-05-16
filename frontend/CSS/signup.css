@@ -2,36 +2,46 @@
 h1,h2,h3,h4,h5,h6,a{
     font-family: 'League Spartan', sans-serif;
 }
-body{
-    background-color: #ff57573b;
+*{
+    margin: 0;
+    padding: 0;
 }
-#container{
-    width: 30%;
+#signupcontainer{
+    width: 100%;
     margin: auto;
     text-align: center;
-    background-color: white;
-    padding: 3%;
+    height: 100vh;
+    background-color: #fdefea;
+    padding:2% 0;
+    display: flex;
+    justify-content: space-around;
 }
-#container>h3{
-    text-align: left;
+#signupcontainer>div{
+    width: 25%;
+    background-color: white;
+    margin: auto;
+    padding:4% 2%;
+}
+#signupcontainer>div>h3{
+    text-align: center;
     color: #ff5757;
 }
-#register{
-    /* width: 80%; */
-    margin: auto;
+#register1,#register2{
+    margin-top: 5%;
 }
-#register>div{
+#register1>div,#register2>div{
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin: 15px 0;
     font-family: 'League Spartan', sans-serif;
-}
+} 
 input[type="text"],
 input[type="number"],
+input[type="email"],
 input[type="password"]{
-    padding: 10px 0px;
-    margin: 5px 0px;
+    padding: 8px 0px;
+    margin: 2px 0px;
+    margin-bottom: 14px;
 }
 input[type="submit"]{
     width: 30%;
@@ -41,4 +51,6 @@ input[type="submit"]{
     color: white;
     border-radius: 5px;
     border: none;
+    margin-bottom: 14px;
 }
+/* #fdefea */

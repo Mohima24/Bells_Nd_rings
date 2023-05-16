@@ -1,9 +1,6 @@
  @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500&display=swap');
 
- /* font-family: 'League Spartan', sans-serif;
-font-family: 'Libre Franklin', sans-serif; */
-/*  */
-
+ 
 .paddingtop{
     margin-top:7%;
 }
@@ -17,6 +14,7 @@ a{
     margin-bottom: 20%
 }
 #banner{
+    margin-top: 3%;
     text-align: center;
     position: relative;
     width: 100%;

@@ -125,6 +125,16 @@ Post      /orders/orderItems
 
 ---
 
+#### Otp model
+{
+    userID:String,
+    otp:String,
+    createdAt:Date,
+    expiresAt:Date
+}
+
+---
+
 ## More Project Details :-
 
 - Type : Individual Project

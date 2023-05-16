@@ -12,57 +12,55 @@ h1,h2,h3,h4,h5,h6,a{
 a{
     text-decoration: none;
 }
-#topNavbar{
-    width: 100%;
-    height: auto;
-    padding: 8px 0px;
-    background-color: #ff5757;
-}
 .container{
     width: 90%;
     margin:0 auto;
 }
+
+
 .flex{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+/* ---------------------------topNav-------------------- */
+
+#topNavbar{
+    background-color: #ff5757;
+    color: white;
+    font-size: 14px;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+#topNavbar a{
+    color: white;
 }
 #leftside{
     width: 60%;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+
 }
-#leftside>div{
-    width: 35%;
+#leftside>div,#rightside>div{
     display: flex;
     align-items: center;
-    text-align: center;
     cursor: pointer;
 }
 #leftside>div>img{
-    width: 10%;
-}
-#topNavbar p,#topNavbar a,#topNavbar span{
-    color: white;
-    font-size: 14px;
-}
-#rightside{
-    width: 35%;
-    display: flex;
-    /* justify-content:space-around; */
-}
-#rightside>div{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    cursor: pointer;
+    width: 18px;
+    padding-right: 10px;
 }
 #rightside>div>img{
-    width: 10%;
-    overflow: hidden;
-    margin-right: 5px;
+    width: 18px;
+    padding-right: 10px;
 }
-
+#rightside{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
 /* ------------------------------------bottom----------------------------- */
 
 #botNavbar{
@@ -71,7 +69,7 @@ a{
     align-items: center;
 }
 #logo{
-    width: 15%;
+    width: 13%;
     height: 50%;
     overflow: hidden;
 }
@@ -147,43 +145,4 @@ a{
 }
 #searchData>div:hover>img{
     filter: grayscale(100%);
-}
-
-/* ------------------navoption----------------------- */
-#navoption ul{
-    list-style: none;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    float: left;
-}
-#navoption ul a{
-    display: block;
-    color: black;
-    line-height: 1.5rem;
-    padding: 0 10px;
-}
-#navoption ul li{
-    position: relative;
-    float: left;
-    margin: 0;
-    padding: 0;
-}
-#navoption ul ul{
-    position: absolute;
-    top:100%;
-    left:0;
-    display: none;
-}
-#navoption ul ul li{
-    float: none;
-    width: 200px;
-}
-
-#navoption ul ul ul{
-    top:0px;
-    left: 100%;
-}
-#navoption ul li:hover>ul{
-    display: block;
 }
