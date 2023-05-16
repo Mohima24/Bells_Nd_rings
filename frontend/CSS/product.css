@@ -8,16 +8,18 @@ h1,h2,h3,h4,h5,h6,a,p{
     padding: 0px;
 }
 #mainsection{
+    width: 98%;
+    margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-top: 5%;
 }
 #left{
-    width:25%;
+    width:15%;
 }
 #ratings>p{
     margin: 2% 0;
-    font-size: 1.5rem;
+    /* font-size: rem; */
 }
 #ratings>div{
     display: flex;
@@ -45,7 +47,7 @@ h1,h2,h3,h4,h5,h6,a,p{
 /* -----------------------------right---------------- */
 
 #right{
-    width: 73%;
+    width: 77%;
     text-align: right;
     font-family: 'League Spartan', sans-serif;
 }
@@ -71,51 +73,50 @@ h1,h2,h3,h4,h5,h6,a,p{
 
 /* --------------------------------------products--------------------- */
 
-#products{
+#products>#productDiv{
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
     text-align: center;
 }
 
-#products>div{
-    width: 30%;
+#products>#productDiv>div{
+    height: 57vh;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     cursor: pointer;
 }
-#products>div:hover>h3{
+#products>#productDiv>div:hover>h3{
     text-decoration: underline;
 }
-#products>div>img{
+#products>#productDiv>div>img{
     width: 100%;
-    height: 50vh;
+    height: 30vh;
     overflow-x: hidden;
 }
-#products>div>p,#products>div>h3{
+#products>#productDiv>div>p,#products>div>div>h3{
     padding: 5px 0;
     text-align: left;
     color: gray;
 }
-#products>div>div>img{
+#products>#productDiv>div>div>img{
     width: 30%;
     padding-right: 5px;
 }
-#products>div>div{
+#products>#productDiv>div>div{
     display: flex;
     justify-content: flex-start;
-    padding: 5px 0;
+    justify-content: space-between;
 }
-#products>div>div>p{
+#products>#productDiv>div>div>p{
     color: #ff5757;
 }
-#products>div>h2, #products>div>p:last-child{
+#products>#productDiv>div>h2, #products>div>div>p:last-child{
     text-align: right;
     color: #ff5757;
     padding: 5px 0
 }
-#products>div>h3{
+#products>#productDiv>div>h3{
     color: #ff5757;
 }

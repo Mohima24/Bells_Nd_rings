@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="payment.css">
-    <link rel="stylesheet" href="../navbar/navbar.css">
-    <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="./CSS/product.css">
+    <link rel="stylesheet" href="./CSS/navbar.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
     <link
     href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600&family=Libre+Franklin:wght@500&display=swap"
     rel="stylesheet">
@@ -45,17 +45,14 @@
                             alt="track_order">
                         <p>Track Orders</p>
                     </div>
-                    <div>
-                        <img width="50%" class="flaticons" src="../images/admin.png" alt="admin">
-                        <p>Admin</p>
-                    </div>
-                    <!-- <div><img width="20%" src="https://www.dollartree.com/ccstore/v1/images/?source=/file/general/shop_family_dollar.png&height=30&width=193" alt=""></div> -->
+                   
                 </div>
             </div>
         </div>
+
         <div id="botNavbar" class="container">
             <div id="logo">
-                <a href="index.html"><img width="80%" src="../images/logo2.png" alt="logo"></a>
+                <a href="index.html"><img width="80%" src="./src/images/logo2.png" alt="logo"></a>
             </div>
             <div id="loginsearch">
                 <div id="search">
@@ -65,18 +62,19 @@
                     </div>
                 </div>
                 <div id="shopplus">
-                    <a href="#">shop <span><img src="../images/Untitled design.png" alt=""></span></a>
+                    <a href="#">shop <span><img src="./src/images/Untitled design.png" alt=""></span></a>
                 </div>
                 <div id="admin">
-                    <img class="flaticons" src="../images/user (1).png" alt="">
+                    <img class="flaticons" src="./src/images/user (1).png" alt="">
                     <p>Account</p>
                 </div>
                 <div id="cart">
-                    <img class="flaticons" src="../images/shopping-cart.png" alt="">
+                    <img class="flaticons" src="./src/images/shopping-cart.png" alt="">
                     <p>Cart</p>
                 </div>
             </div>
         </div>
+
         <div id="navoption" class="container">
             <ul>
                 <li>
@@ -110,28 +108,80 @@
             </ul>
         </div>
     </header>
-    <main>
-        <div class="container" id="payment">
-            <div id="address">
-                <p>Address Name : Mohima Bahadur</p>
-                <p>Address : 20 south purbachal belabhavana kolkata-700078</p>
-                <p>Zip Code : 700078</p>
+    <main id="mainsection">
+        <div id="left">
+            <div id="ratings">
+                <p>AVERAGE RATING AND UP</p>
+                <hr>
+                <div>
+                    <input type="checkbox" value="5">
+                    <div>
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/golden.png" alt="stars">
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" value="4">
+                    <div>
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/white.png" alt="stars">
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" value="3">
+                    <div>
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/white.png" alt="stars">
+                        <img src="./src/images/white.png" alt="stars">
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" value="2">
+                    <div>
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/white.png" alt="stars">
+                        <img src="./src/images/white.png" alt="stars">
+                        <img src="./src/images/white.png" alt="stars">
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" value="1">
+                    <div>
+                        <img src="./src/images/golden.png" alt="stars">
+                        <img src="./src/images/white.png"" alt="stars">
+                        <img src="./src/images/white.png"" alt="stars">
+                        <img src="./src/images/white.png" alt="stars">
+                        <img src="./src/images/white.png" alt="stars">
+                    </div>
+                </div>
             </div>
-            <div id="paymentoption">
-                <img src="https://lh3.googleusercontent.com/RkN2IcvWd4DWNTVbh8Ma2G77D42Gd5HP0Deydf9FmzbDUMxLNsmWUSE8k562PgEPKzmF_OGWIiySxhdLUdNcxJ3t8kc7JugTaAhHYA" alt="gpay" id="gpay">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmx8nwpo-338eCaUbee48Za-7ZUxPl1OqEyBJchcWp-BnWz5qsYqD9FWSTgTA8hHSX3dE&usqp=CAU" alt="phone-pe" id="ppay">
+            <div id="material">
             </div>
         </div>
-        <div id="popup">
-            <form id="form">
-                <img src="https://cdn-icons-png.flaticon.com/512/59/59254.png" alt="">
-                <h2>phone-pe</h2>
-                <label>Phone Number</label>
-                <br>
-                <input type="number" id="number">
-                <br>
-                <input type="submit">
-            </form>
+        <div id="right">
+            <h1>Candleholders</h1>
+            <p>Find the perfect base for your favorite candles and add an extra touch of style to your home or party for less with our affordable selection of trendy candleholders.</p>
+            <label>Sort By</label>
+            <select name="options" id="options">
+                <option value="">Relevance</option>
+                <option value="lth">Low to High Price</option>
+                <option value="htl">High to Low Price</option>
+            </select>
+            <div id="products">
+
+                <div id="productDiv"></div>
+                <div class="peginationDiv"></div>
+            </div>
+
         </div>
     </main>
     <footer>
@@ -193,4 +243,7 @@
     </footer>
 </body>
 </html>
-<script src="payment.js"></script>
+
+<script src="./Js/search.js"></script>
+<script src="./Js/product.js"></script>
+<!-- <script src="./Js/cart.js"></script> -->

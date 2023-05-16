@@ -17,7 +17,7 @@ searchData.innerHTML=""
 let bag=[]
 let fetchd= async()=>{
     try{
-        let data = await fetch("https://busy-gold-scarab-vest.cyclic.app/products/all")
+        let data = await fetch("https://busy-gold-scarab-vest.cyclic.app/products/?limit=5")
         let alldata = await data.json()
         bag=alldata
     }
@@ -51,25 +51,9 @@ function searchrender(data){
     }).join("")}`
 }
 admin.addEventListener('click',()=>{
-    window.location.assign("./src/signuppage/signin.html")
+    window.location.assign("signin.html")
 })
 cartnav.addEventListener("click",()=>{
-    window.location.assign("./src/cart_page/cart.html")
+    window.location.assign("cart.html")
 })
 
-adminside.addEventListener("click",()=>{
-    window.location.assign("./Dashboard/signinpage/signin.html")
-})
-
-// console.log(thrillsec_childdiv[0].attributes.name.value=="hello1")
-
-// const thrillingdiv= document.querySelectorAll('#thrilling>div')
-// let value = sessionStorage.getItem("ptype")
-
-// for(let i=0;i<thrillingdiv.length;i++){
-//     thrillingdiv[i].addEventListener("click",(e)=>{
-//         let value = thrillingdiv[i].attributes.name.value
-//         sessionStorage.setItem("ptype",value)
-//         window.location.assign("./src/productpage/productpage.html")
-//     })    
-// }

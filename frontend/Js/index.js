@@ -1,11 +1,10 @@
 const search = document.getElementById("inputsearch")
 const searchData = document.getElementById("searchData")
-const thrillsec_childdiv = document.querySelectorAll("#thrilling>div")
+const thrillingdiv= document.querySelectorAll('#thrilling>div')
+let value = sessionStorage.getItem("ptype")
 let access_token = JSON.parse(localStorage.getItem("access_token")) || null
 const cartnav= document.getElementById("cart")
-const adminside = document.getElementById("adminside")
 
-const admin= document.getElementById("admin")
 if(access_token){
     admin.innerHTML=`
     <p>${access_token.userName}</p>
@@ -17,7 +16,7 @@ searchData.innerHTML=""
 let bag=[]
 let fetchd= async()=>{
     try{
-        let data = await fetch("https://busy-gold-scarab-vest.cyclic.app/products/all")
+        let data = await fetch("https://busy-gold-scarab-vest.cyclic.app/products/?limit=5")
         let alldata = await data.json()
         bag=alldata
     }
@@ -51,14 +50,19 @@ function searchrender(data){
     }).join("")}`
 }
 admin.addEventListener('click',()=>{
-    window.location.assign("../signuppage/signin.html")
+    window.location.assign("signin.html")
 })
 cartnav.addEventListener("click",()=>{
-    window.location.assign("../cart_page/cart.html")
+    window.location.assign("cart.html")
 })
 
-adminside.addEventListener("click",()=>{
-    window.location.assign("./Dashboard/signinpage/signin.html")
-})
 
-// console.log(thrillsec_childdiv[0].attributes.name.value=="hello1")
+for(let i=0;i<thrillingdiv.length;i++){
+    thrillingdiv[i].addEventListener("click",(e)=>{
+        let value = thrillingdiv[i].attributes.name.value
+        // console.log(thrillingdiv[i])
+        sessionStorage.setItem("ptype",value)
+        console.log(value)
+        window.location.assign("productpage.html")
+    })    
+}

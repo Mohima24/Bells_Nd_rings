@@ -23,7 +23,7 @@
     let arr = []
     async function fetchfun(){
         try{
-            const fetchData = await fetch('http://localhost:6060/products/all');
+            const fetchData = await fetch('https://busy-gold-scarab-vest.cyclic.app/products/all');
             const res = await fetchData.json()
             arr=[...res]
             render(arr)

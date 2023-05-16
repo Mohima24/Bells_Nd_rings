@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="visible.css">
-    <link rel="stylesheet" href="../navbar/navbar.css">
-    <link rel="stylesheet" href="../footer/footer.css">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="./CSS/cart.css">
+    <link rel="stylesheet" href="./CSS/navbar.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
     <link
     href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600&family=Libre+Franklin:wght@500&display=swap"
     rel="stylesheet">
@@ -45,17 +45,13 @@
                             alt="track_order">
                         <p>Track Orders</p>
                     </div>
-                    <div id="adminside">
-                        <img width="50%" class="flaticons" src="../images/admin.png" alt="admin">
-                        <p>Admin</p>
-                    </div>
-                    <!-- <div><img width="20%" src="https://www.dollartree.com/ccstore/v1/images/?source=/file/general/shop_family_dollar.png&height=30&width=193" alt=""></div> -->
                 </div>
             </div>
         </div>
+
         <div id="botNavbar" class="container">
             <div id="logo">
-                <a href="../../index.html"><img width="80%" src="../images/logo2.png" alt="logo"></a>
+                <a href="index.html"><img width="80%" src="./src/images/logo2.png" alt="logo"></a>
             </div>
             <div id="loginsearch">
                 <div id="search">
@@ -65,18 +61,19 @@
                     </div>
                 </div>
                 <div id="shopplus">
-                    <a href="#">shop <span><img src="../images/Untitled design.png" alt=""></span></a>
+                    <a href="#">shop <span><img src="./src/images/Untitled design.png" alt=""></span></a>
                 </div>
                 <div id="admin">
-                    <img class="flaticons" src="../images/user (1).png" alt="">
+                    <img class="flaticons" src="./src/images/user (1).png" alt="">
                     <p>Account</p>
                 </div>
                 <div id="cart">
-                    <img class="flaticons" src="../images/shopping-cart.png" alt="">
+                    <img class="flaticons" src="./src/images/shopping-cart.png" alt="">
                     <p>Cart</p>
                 </div>
             </div>
         </div>
+        
         <div id="navoption" class="container">
             <ul>
                 <li>
@@ -110,25 +107,50 @@
             </ul>
         </div>
     </header>
-    <main id="productsel" class="container">
-        <div id="imgside">
-            <img src="https://www.dollartree.com/ccstore/v1/images/?source=/file/v3221598094008927857/products/318606.jpg&height=940&width=940" alt="">
-        </div>
-        <div id="detailside">
-            <h1>Frosted Votive Candle Holder with Gold Ring</h1>
-            <div id="review"><img src="../images/5star.jpg" alt=""> <span>5.0</span></div>
-            <p>The item you have selected is on backorder. It should be available within 30 days.</p>
-            <p id="amount">1.25 <span>(each)</span></p>
+    <main class="container">
+        <div id="cartdata">
             <div>
-                <select id="quantity">
-                    <option value=24>24</option>
-                    <option value=48>48</option>
-                    <option value=72>72</option>
-                    <option value=96>96</option>
-                </select>
-                <p>$ 1200</p>
+                <img src="https://www.dollartree.com/ccstore/v1/images/?source=/file/v3221598094008927857/products/318606.jpg&height=100&width=100" alt="">
+                <h4>abc</h4>
+                <div>
+                </div>
+                <p>price</p>
+                <button id="delete">Delete</button>
             </div>
-            <button id="addtocart">Add to cart</button>
+        </div>
+        <div id="lowercart">
+            <div id="dummy">
+                <p>In-Store Estimated Pick-Up dates are valid for orders placed before 9:30 p.m. ET.
+                    <br>
+                    <br>
+    If your order is placed after 9:30 p.m. ET, the Estimated Pick-Up date noted on your Order Confirmation email is not guaranteed and could vary. Once your order has been shipped, your Shipment Confirmation email will include the confirmed Estimated Pick-Up date.</p>
+            </div>
+            <div class="orderSummery">
+                <h1>Order Summary</h1>
+                <div>
+                    <p id="promocode">+Add Promo Code</p>
+                    <input type="text" id="promo_code" class="codeinput">
+                        <button class="codeinput" id="apply">Apply</button>
+                    <div>
+                            <!--append option  -->
+                    </div>
+                    <hr>
+                    <div>
+                        <p>Items In Your Cart: $<span id="amount">0</span></p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>Discount Total : $<span id="dicount">0</span></p>
+                    </div>
+                    <hr>
+                    <div>
+                        <p>Shipping cost : $ <span>9.9</span></p>
+                    </div>
+                    <hr>
+                    <div>ESTIMATED ORDER TOTAL : $<span id="total_bill">0</span></div>
+                    <button id="proceedtocheckout">Proceed to Checkout</button>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
@@ -190,6 +212,5 @@
     </footer>
 </body>
 </html>
-<script src="visible.js"></script>
-<script src="../navbar/search.js"></script>
-<!-- <script src="../cart_page/cart.js"></script> -->
+<script src="./Js/cart.js"></script>
+<script src="./Js/search.js"></script>

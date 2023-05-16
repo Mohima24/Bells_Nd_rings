@@ -1,4 +1,4 @@
-const products = document.getElementById("products")
+const products = document.getElementById("productDiv")
 const options = document.getElementById("options")
 const material = document.getElementById("material")
 const ratings= document.querySelectorAll('#ratings>div>input')
@@ -8,7 +8,7 @@ const righth = document.querySelector("#right>h1")
 const value = sessionStorage.getItem("ptype") || "Calendars & Planners"
 
 righth.innerText = `${value}`
-// console.log(righth)
+console.log(value)
 
 let url=`https://busy-gold-scarab-vest.cyclic.app/products/?ptype=${value}`
 let arr=[]
@@ -69,17 +69,17 @@ function rating (){
 rating ()
 function icon(x){
     if(x==5){
-        return '<img src="../images/5star.jpg" alt="">'
+        return '<img src="./src/images/5star.jpg" alt="">'
     }else if(x>=4 && x<5){
-        return '<img src="../images/star4.jpg" alt="">'
+        return '<img src="./src/images/star4.jpg" alt="">'
     }else if(x>=3 && x<5){
-        return '<img src="../images/star3.jpg" alt="">'
+        return '<img src="./src/images/star3.jpg" alt="">'
     }else if(x>=2 && x<5){
-        return '<img src="../images/star2.jpg" alt="">'
+        return '<img src="./src/images/star2.jpg" alt="">'
     }else if(x>=1 && x<5){
-        return '<img src="../images/star1.jpg" alt="">'
+        return '<img src="./src/images/star1.jpg" alt="">'
     }else{
-        return '<img src="../images/star0.jpg" alt="">'
+        return '<img src="./src/images/star0.jpg" alt="">'
     }
 }
 
@@ -131,13 +131,15 @@ function renderData(data){
                     <div>${icon(el.rating)}<p>${el.rating}</p></div>
                     <h3>${el.name}</h3>
                     <p>Minimum You Can Buy: 24 (1 case)</p>
-                    <h2>${el.price}</h2>
-                    <p>per unit</p>
+                    <div>
+                        <h2>${el.price}</h2>
+                        <p>per unit</p>
+                    </div>
                 </div>
                 `
         }).join("")}`
 
-        const productsel= document.querySelectorAll("#products>div")
+        const productsel= document.querySelectorAll("#productDiv>div")
         for(let i=0;i<productsel.length;i++){
             productsel[i].addEventListener('click',()=>{
 
@@ -146,7 +148,7 @@ function renderData(data){
                         let fetchd= await fetch(`https://busy-gold-scarab-vest.cyclic.app/products/${productsel[i].dataset.id}`)
                         let data = await fetchd.json()
                         localStorage.setItem('oneEl',JSON.stringify(data))
-                        window.location.assign("../visibleproduct/visible.html")
+                        window.location.assign("visible.html")
                         console.log(data)
                     }
                     catch(err){

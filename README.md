@@ -17,6 +17,8 @@
  - Add to cart.
  - Authorization.
  - Seller and admin Authorization & CRUD Operations.
+ - Filter products by rating and material
+ - Sort products by price
 ---
 <br/>
 
@@ -28,7 +30,6 @@
 
 > - JWT (JsonWebToken) <br/>
 > - Bcrypt <br/>
-> - ChatGPT (Used for dummy-data generation only)
 > - NodeMailer <br/>
 > - Twilio
 
