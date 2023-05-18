@@ -9,10 +9,9 @@ form1.addEventListener("submit",async(e)=>{
 
         let userobj={
             email:email.value,
-            password:pass.value,
-
+            password:pass1.value,
         }
-        let login_rqst = await fetch("https://busy-gold-scarab-vest.cyclic.app/users/login",{
+        let login_rqst = await fetch("https://busy-gold-scarab-vest.cyclic.app/users/login/email",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -23,18 +22,47 @@ form1.addEventListener("submit",async(e)=>{
             let token= await login_rqst.json()
             localStorage.setItem("access_token",JSON.stringify(token))
             alert("User has been sucessfully log in")
-            // admin.innerHTML=token.userName;
-            window.location.assign("../../index.html")
+            window.location.assign("index.html")
         }else{
-            alert("User not found Please login First")
+            alert("Please login First")
         }
 
     }
     catch(err){
-        alert("User not found Please login")
+        alert("found Please login")
         console.log(err)
     }
 
 })
 
+form2.addEventListener("submit",async(e)=>{
+    e.preventDefault()
+    try{
 
+        let userobj={
+            email:phone.value,
+            password:pass2.value,
+        }
+        let login_rqst = await fetch("https://busy-gold-scarab-vest.cyclic.app/users/login/mobile",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(userobj)
+        })
+        if(login_rqst.ok){
+            let token= await login_rqst.json()
+            localStorage.setItem("access_token",JSON.stringify(token))
+            alert("User has been sucessfully log in")
+            window.location.assign("index.html")
+        }else{
+            alert("Please login First")
+        }
+
+    }
+    catch(err){
+        alert("found Please login")
+        console.log(err)
+    }
+
+})
