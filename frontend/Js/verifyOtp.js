@@ -1,6 +1,8 @@
  const inputs = document.querySelectorAll("input");
  const button = document.querySelector("button");
  const resendOTPtimer = document.querySelector('#resendOTP>span')
+ const resentButton = document.querySelector('#resendOTP>button')
+ const userDetails = JSON.parse(localStorage.getItem('userDetails')) || null
 
 inputs.forEach((input, index1) => {
   input.addEventListener("keyup", (e) => {
@@ -37,12 +39,37 @@ inputs.forEach((input, index1) => {
 });
 
 
-document.getElementById('btn').addEventListener('click',()=>{
+document.getElementById('btn').addEventListener('click',async(e)=>{
+  e.preventDefault()
+  let userID = userDetails.userID;
+  let otp = inputs[0].value+""+inputs[1].value+""+inputs[2].value+""+inputs[3].value;
+  otp=+otp
+  console.log(otp)
 
-});
+      try{
+        let register_rqst = await fetch("https://busy-gold-scarab-vest.cyclic.app/users/verifyotp",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({otp , userID:userID})
+        })
+        const data = await register_rqst.json()
+        if(data.status=="verified"){
+          alert("You are verified now")
+          window.location.assign("signin.html")
+        }else{
+            alert("Please try again")
+        }
+    }
+    catch(err){
+        console.log(err)
+    }
+  }
+);
 
 let interval=null;
-let seconds=5;
+let seconds=60;
 start()
 function start(){
     if(interval!==null){
@@ -54,13 +81,72 @@ function start(){
 
 function time(){
     seconds--;
-    resendOTPtimer.innerText = `00:${seconds}`;
+    if(seconds<10){
+      resendOTPtimer.innerText = `00:0${seconds}`
+    }else{
+      resendOTPtimer.innerText = `00:${seconds}`
+    };
     if(seconds<=0){
         clearInterval(interval)
         seconds=60;
-        document.getElementById('resendOTP').style.cursor="pointer"
+        document.getElementById('resendOTP').style.cursor="pointer";
+        resentButton.style.cursor= "pointer"
+        resentButton.classList.add('activeButton')
+        resentButton.removeAttribute("disabled")
     }
 }
 
+resentButton.addEventListener('click',()=>{
 
+  const useremail = userDetails.email;
+  const userID = userDetails.userID;
+  const mobile = userDetails.mobile;
+
+  userDetails?useremail?resenOTPwithemail({useremail,userID}):resenOTPwithMobilel({mobile,userID}):console.log(null)
+
+})
+
+async function resenOTPwithemail({useremail,userID}){
+  console.log(useremail,userID)
+    try{
+      let register_rqst = await fetch("https://busy-gold-scarab-vest.cyclic.app/users/resendOTPEmail",{
+          method:"POST",
+          headers:{
+              "Content-Type":"application/json"
+          },
+          body:JSON.stringify({email:useremail , userID:userID})
+      })
+      const data = await register_rqst.json()
+      if(data.status=="PENDING"){
+        alert("OTP has send")
+      }else{
+          alert("Please try again")
+      }
+  }
+  catch(err){
+      console.log(err)
+  }
+}
+
+async function resenOTPwithMobilel({mobile,userID}){
+
+    try{
+      let register_rqst = await fetch("https://busy-gold-scarab-vest.cyclic.app/users/resendOTPMobile",{
+          method:"POST",
+          headers:{
+              "Content-Type":"application/json"
+          },
+          body:JSON.stringify({mobile:mobile , userID:userID})
+      })
+      const data = await register_rqst.json()
+      if(data.status=="PENDING"){
+        alert("OTP has send")
+      }else{
+          alert("Please try again")
+      }
+  }
+  catch(err){
+      console.log(err)
+  }
+}
 window.addEventListener("load", () => inputs[0].focus());

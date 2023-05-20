@@ -145,5 +145,5 @@ function quantityrender(el){
 }
 
 proceed.addEventListener("click",()=>{
-    window.location.assign("../payment_page/payment.html")
+    window.location.assign("payment.html")
 })

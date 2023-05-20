@@ -17,10 +17,13 @@ form1.addEventListener("submit",async(e)=>{
             },
             body:JSON.stringify(userobj)
         })
-        if(register_rqst.ok){
-            alert("Sign Up Successfully")
+        const data = await register_rqst.json()
+        if(data.status=="PENDING"){
+            const userDetails = {userID:data.data.userID,email:data.data.email}
+            localStorage.setItem('userDetails',JSON.stringify(userDetails))
+            window.location.assign("verifyOtp.html")
         }else{
-            alert("You already have an account")
+            alert("Please try again")
         }
     }
     catch(err){
@@ -45,12 +48,8 @@ form2.addEventListener("submit",async(e)=>{
             },
             body:JSON.stringify(userobj)
         })
-
-        if(register_rqst.ok){
-            alert("Sign Up Successfully")
-        }else{
-            alert("You already have an account")
-        }
+        const data = await register_rqst.json()
+        console.log(data)
     }
     catch(err){
         alert("Enter valid credtials")
