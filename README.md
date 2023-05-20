@@ -1,6 +1,6 @@
 # ---BellsAndRing
 
-- Deployed Webite = https://earnest-meerkat-03bb74.netlify.app/
+- Deployed Webite = https://bellsandribbons.netlify.app/
 - Deployed Backend = https://busy-gold-scarab-vest.cyclic.app/
 
 ---
