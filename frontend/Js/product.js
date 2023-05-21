@@ -3,12 +3,17 @@ const options = document.getElementById("options")
 const material = document.getElementById("material")
 const ratings= document.querySelectorAll('#ratings>div>input')
 const righth = document.querySelector("#right>h1")
+const pagination_element = document.getElementById('pagination');
 
 
 const value = sessionStorage.getItem("ptype") || "Calendars & Planners"
 
 righth.innerText = `${value}`
-console.log(value)
+
+
+let current_page = 1;
+let rows = 8;
+
 
 let url=`https://busy-gold-scarab-vest.cyclic.app/products/?ptype=${value}`
 let arr=[]
@@ -17,7 +22,9 @@ const render = async()=>{
         let fetchd= await fetch(url)
         let data = await fetchd.json()
         arr=data
-        renderData(data)
+        // renderData(data)
+        DisplayList (data, products, rows, current_page)
+        SetupPagination (data, pagination_element, rows)
         reducefun(data)
     }
     catch(err){
@@ -38,7 +45,8 @@ options.addEventListener('change',()=>{
         try{
             let fetchd= await fetch(url)
             let data = await fetchd.json()
-            renderData(data)
+            DisplayList (data, products, rows, current_page)
+            SetupPagination (data, pagination_element, rows)
         }
         catch(err){
             console.log(err)
@@ -56,7 +64,9 @@ function rating (){
                 try{
                     let fetchd= await fetch(url)
                     let data = await fetchd.json()
-                    renderData(data)
+                    arr=data
+                    DisplayList (data, products, rows, current_page)
+                    SetupPagination (data, pagination_element, rows)
                 }
                 catch(err){
                     console.log(err)
@@ -66,6 +76,7 @@ function rating (){
         })
     }
  }
+
 rating ()
 function icon(x){
     if(x==5){
@@ -84,6 +95,7 @@ function icon(x){
 }
 
 function reducefun(data){
+
     let reducedata = data.reduce((acc,el)=>{
         acc.push(el.material)
         return acc
@@ -110,10 +122,13 @@ function reducefun(data){
             let newData= arr.filter((el)=>{
                 return el.material.toLowerCase().trim()==e.target.value.toLowerCase().trim()
             })
-            renderData(newData)
+            DisplayList (newData, products, rows, current_page)
+            SetupPagination (newData, pagination_element, rows)
         })
     }
 }
+
+
 function forinl(reducedata){
     let arr=[]
     for (let key in reducedata){
@@ -122,9 +137,18 @@ function forinl(reducedata){
     return arr
 }
 
-function renderData(data){
+render()
 
-    products.innerHTML=`${data.map((el)=>{
+function DisplayList (items, wrapper, rows_per_page, page) {
+	
+	wrapper.innerHTML = "";
+	page--;
+
+	let start = rows_per_page * page;
+	let end = start + rows_per_page;
+	let paginatedItems = items.slice(start, end);
+
+        products.innerHTML=`${paginatedItems.map((el)=>{
             return `
                 <div data-id=${el._id}>
                     <img src=${el.img}></img>
@@ -132,15 +156,17 @@ function renderData(data){
                     <h3>${el.name}</h3>
                     <p>Minimum You Can Buy: 24 (1 case)</p>
                     <div>
-                        <h2>${el.price}</h2>
+                        <h2>$ ${el.price}</h2>
                         <p>per unit</p>
                     </div>
                 </div>
                 `
         }).join("")}`
 
+
         const productsel= document.querySelectorAll("#productDiv>div")
         for(let i=0;i<productsel.length;i++){
+
             productsel[i].addEventListener('click',()=>{
 
                 const idData = async()=>{
@@ -156,10 +182,48 @@ function renderData(data){
                     }
                 }
                 idData()
+
             })
+
         }
-        // console.log(productsel)
+
 }
 
-render()
 
+function SetupPagination(items, wrapper, rows_per_page) {
+
+	wrapper.innerHTML = "";
+
+	let page_count = Math.ceil(items.length / rows_per_page);
+
+	for (let i = 1; i < page_count + 1; i++) {
+
+		let btn = PaginationButton(i, items);
+		wrapper.appendChild(btn);
+
+	}
+
+}
+
+function PaginationButton (page, items) {
+
+	let button = document.createElement('button');
+	button.innerText = page;
+
+	if (current_page == page) button.classList.add('active');
+
+	button.addEventListener('click', function () {
+
+		current_page = page;
+		DisplayList(items, products, rows, current_page);
+
+		let current_btn = document.querySelector('.pagenumbers button.active');
+		current_btn.classList.remove('active');
+
+		button.classList.add('active');
+
+	});
+
+	return button;
+
+}

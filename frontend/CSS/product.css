@@ -83,10 +83,13 @@ h1,h2,h3,h4,h5,h6,a,p{
 }
 
 #products>#productDiv>div{
-    height: 57vh;
+    height: 59vh;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 #products>#productDiv>div:hover>h3{
     text-decoration: underline;
@@ -109,9 +112,13 @@ h1,h2,h3,h4,h5,h6,a,p{
     display: flex;
     justify-content: flex-start;
     justify-content: space-between;
+    margin: 10px 0;
 }
 #products>#productDiv>div>div>p{
     color: #ff5757;
+}
+#products>#productDiv>div>div>h2{
+    font-size: 1rem;
 }
 #products>#productDiv>div>h2, #products>div>div>p:last-child{
     text-align: right;
@@ -119,5 +126,21 @@ h1,h2,h3,h4,h5,h6,a,p{
     padding: 5px 0
 }
 #products>#productDiv>div>h3{
+    font-size: 1rem;
     color: #ff5757;
+    margin: 10px 0;
+}
+#pagination>button{
+    padding: 7px 12px;
+    margin: 1.5rem 0;
+    margin-left: 10px;
+    background-color: #e16161;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+#pagination .active{
+    background-color: #f93b3b;
 }
