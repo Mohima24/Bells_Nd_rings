@@ -19,6 +19,7 @@
  - Seller and admin Authorization & CRUD Operations.
  - Filter products by rating and material
  - Sort products by price
+ - Pagination
 ---
 <br/>
 

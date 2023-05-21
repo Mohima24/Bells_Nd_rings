@@ -2,13 +2,15 @@ const search = document.getElementById("inputsearch")
 const searchData = document.getElementById("searchData")
 const thrillsec_childdiv = document.querySelectorAll("#thrilling>div")
 let access_token = JSON.parse(localStorage.getItem("access_token")) || null
+const userData = JSON.parse(localStorage.getItem('userData')) || null
 const cartnav= document.getElementById("cart")
-const adminside = document.getElementById("adminside")
 
+// const adminside = document.getElementById("adminside")
+console.log(userData)
 const admin= document.getElementById("admin")
-if(access_token){
+if(userData){
     admin.innerHTML=`
-    <p>${access_token.userName}</p>
+    <p>${userData.firstName}</p>
     <p>(logout)</p>
     `
 }
@@ -39,8 +41,10 @@ search.addEventListener("input",(e)=>{
 })
 
 function searchrender(data){
-    searchData.innerHTML=null
-    searchData.innerHTML=`${data.map((el)=>{
+
+    searchData.innerHTML = null;
+
+    searchData.innerHTML = `${data.map((el)=>{
         return `
         <div>
         <img src=${el.img}>
@@ -50,6 +54,7 @@ function searchrender(data){
         `
     }).join("")}`
 }
+
 admin.addEventListener('click',()=>{
     window.location.assign("signin.html")
 })
