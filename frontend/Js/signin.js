@@ -1,8 +1,6 @@
 const form1= document.getElementById("register1")
 const form2= document.getElementById("register2")
 const admin = document.getElementById("admin")
-// let access_token = JSON.parse(localStorage.getItem("access_token"))
-
 
 form1.addEventListener("submit",async(e)=>{
     e.preventDefault()
@@ -22,8 +20,7 @@ form1.addEventListener("submit",async(e)=>{
         if(login_rqst.ok){
 
             let token= await login_rqst.json()
-            console.log(token)
-            localStorage.setItem("access_token",JSON.stringify(token.access_token))
+            localStorage.setItem("access_token",token.access_token)
             localStorage.setItem("userData",JSON.stringify(token.findeuser))
             alert("User has been sucessfully log in")
             window.location.assign("index.html")

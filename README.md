@@ -113,14 +113,21 @@ Post      /orders/orderItems
 ```
 
   {
-    user: ObjectId(userID),
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+    },
     orderItems: [
           {
-            product: ObjectId(productID),
-            quantity: Number
-          }  
+            product:{ 
+              type: mongoose.Schema.Types.ObjectId,
+              ref: "products",
+            },
+            quantity: {type :Number, required:true}
+          }
     ],
-  },
+    totalBill:Number
+  }
 
 ```
 

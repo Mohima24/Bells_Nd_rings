@@ -1,34 +1,46 @@
-const gpay = document.getElementById("gpay")
-const ppay= document.getElementById("ppay")
-const headings= document.querySelector("#popup>form>h2")
-const cross= document.querySelector("#popup>form>img")
-const popup= document.getElementById("popup")
-const form = document.getElementById("form")
+const userData = JSON.parse(localStorage.getItem('userData'))
+const form = document.querySelector('form');
+const lsdata = JSON.parse(localStorage.getItem('lsdata'))
+const amount = localStorage.getItem('bill_amount')
+const access_token = localStorage.getItem('access_token')
+// console.log(access_token)
+let productArr = lsdata.map((el)=> {return {product:el.id,quantity:el.quantity}})
 
-gpay.addEventListener("click",()=>{
-    popup.style.display="flex"
-    headings.innerText= "G-pay"
-    // window.location.reload()
-    console.log("hello")
-})
-ppay.addEventListener("click",()=>{
-    popup.style.display="flex";
-    headings.innerText= "Phone-pe"
-    // window.location.reload()
-    console.log("hello")
-})
-cross.addEventListener("click",()=>{
-    popup.style.display="none"
-})
-
-form.addEventListener("submit",(e)=>{
+form.addEventListener("submit",async (e)=>{
     e.preventDefault()
-    if(number.value){
-        console.log(number.value)
-        alert("Payment has been succesfull")
-        popup.style.display="none"
-        window.location.assign("../../index.html")
-    }else{
-        alert("please try again")
+    let obj = {
+        user: userData._id,
+        orderItems:productArr,
+        totalBill:amount
+    }
+    if(!access_token){
+        alert("Please Sign-In first")
+        window.location.assign('signin.html')
+    }
+    try{
+
+        const postorder = await fetch('https://busy-gold-scarab-vest.cyclic.app/orders/orderItems',{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json",
+                "Authorization": access_token
+            },
+            body:JSON.stringify(obj)
+        })
+        const res = await postorder.json()
+        if(res.status=='OK'){
+
+            localStorage.setItem('lsdata',null)
+            localStorage.setItem('bill_amount',null)
+            alert("Order has been placed")
+            window.location.assign('index.html')
+        }else{
+            alert("Please Sign-In first")
+            window.location.assign('signin.html')
+        }
+    }
+    catch(err){
+
+        alert("Please login")
     }
 })

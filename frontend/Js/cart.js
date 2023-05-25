@@ -1,8 +1,9 @@
-
 const lsdata =JSON.parse(localStorage.getItem('lsdata'))|| []
 const amountall = document.getElementById("amount")
 const total_bill = document.getElementById("total_bill")
 const proceed= document.getElementById("proceedtocheckout")
+const amount = localStorage.getItem('bill_amount');
+
 
 let promo= document.getElementById('promocode')
 promo.addEventListener('click',function(){
@@ -21,9 +22,11 @@ document.getElementById('apply').addEventListener('click',function(){
         document.getElementById('apply').style.display="none";
 
         document.getElementById('dicount').innerText= 10;
-        foodValue=foodValue-10;
-        document.getElementById('total_bill').innerText=foodValue;
-        document.getElementById('pay-total').innerText=foodValue;
+        total_bill.innerText = (+total_bill.innerText)-10;
+        localStorage.setItem('bill_amount',(+total_bill.innerText))
+        alert("Promocode Applied")
+    }else{
+        alert("Wrong code")
     }
 })
 
@@ -44,34 +47,36 @@ function addtocart(){
             <button id="delete" value=${i}>Delete</button>
             </div>
         `
-    })}`
+    }).join("")}`
 }
-addtocart()
-    const tot = document.querySelectorAll("#tot")
-    const selecttg= document.querySelectorAll("#cartdata>div>div>select")
-    for(let i=0;i<selecttg.length;i++){
+addtocart();
 
-        selecttg[i].addEventListener("change",(e)=>{
-            let filter= lsdata.filter((el)=>{
-                return el._id==selecttg[i].dataset.id
-            })
-            let diff = Math.abs(e.target.value - filter[0].quantity)
-            let x = +e.target.value* filter[0].price
-            q= +e.target.value
-            tot[i].innerText=`$ ${x}`
+const tot = document.querySelectorAll("#tot")
+const selecttg= document.querySelectorAll("#cartdata>div>div>select")
 
-            function totalamt(){
-                let data = lsdata.reduce((acc,el)=>{
-                    acc=acc+el.total
-                    return acc
-                },0)
-                amountall.innerText=data
-                return data
-            }
-            // let totalamt=totalamt()
-            total_bill.innerText = +totalamt()+9.9 + diff
+for(let i=0;i<selecttg.length;i++){
+
+    selecttg[i].addEventListener("change",(e)=>{
+        let filter= lsdata.filter((el)=>{
+            return el._id==selecttg[i].dataset.id
         })
-    }
+        let diff = Math.abs(e.target.value - filter[0].quantity)
+        let x = +e.target.value* filter[0].price
+        q= +e.target.value
+        tot[i].innerText=`$ ${x}`
+
+        function totalamt(){
+            let data = lsdata.reduce((acc,el)=>{
+                acc=acc+el.total
+                return acc
+            },0)
+            amountall.innerText=data
+            return data
+        }
+
+        total_bill.innerText = +totalamt()+9.9 + diff;
+    })
+};
 
 const dlt_btn= document.querySelectorAll("#delete")
 console.log(dlt_btn[0].value)
@@ -96,7 +101,7 @@ function deleteData(index){
         amountall.innerText=data
         return data
     }
-    // let totalamt=totalamt()
+
     total_bill.innerText = +totalamt()+9.9
 }
 
@@ -108,7 +113,7 @@ function totalamt(){
     amountall.innerText=data
     return data
 }
-// let totalamt=totalamt()
+
 total_bill.innerText = +totalamt()+9.9
 totalamt()
 
@@ -147,3 +152,5 @@ function quantityrender(el){
 proceed.addEventListener("click",()=>{
     window.location.assign("payment.html")
 })
+
+localStorage.setItem('bill_amount',(+total_bill.innerText))

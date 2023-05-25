@@ -1,160 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Page</title>
+    <title>Payment Form</title>
     <link rel="stylesheet" href="./CSS/payment.css">
-    <link rel="stylesheet" href="./CSS/navbar.css">
-    <link rel="stylesheet" href="./CSS/footer.css">
-    <link
-    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600&family=Libre+Franklin:wght@500&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 </head>
-<body>
-    <header>
-        <div id="topNavbar">
-            <div class="container flex">
-                <div id="leftside">
-                    <div>
-                        <img src="https://www.dollartree.com/file/general/icon-stores.png" alt="location_icon">
-                        <div><span>Your store: </span><a href="">sams shop center</a></div>
-                    </div>
-                    <div>
-                        <img src="https://www.dollartree.com/file/general/DT-icon-catalog-quick-order-white.svg"
-                            alt="Catalog">
-                        <p>Catalog Quick Order</p>
-                    </div>
-                    <div>
-                        <img src="https://www.dollartree.com/file/general/DT-icon-phone-white.svg" alt="phone">
-                        <div>
-                            <p>Order By Phone 1-877-530-TREE</p>
-                            <a href="">(Call Center Hours)</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="rightside">
-                    <div>
-                        <img src="https://www.dollartree.com/file/general/white_same_day_delivery_icon.svg"
-                            alt="deliver_timer">
-                        <p>Same-Day Delivery</p>
-                    </div>
-                    <div>
-                        <img src="https://www.dollartree.com/file/general/DT-icon-track-orders-white.svg"
-                            alt="track_order">
-                        <p>Track Orders</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div id="botNavbar" class="container">
-            <div id="logo">
-                <a href="index.html"><img width="80%" src="./src/images/logo2.png" alt="logo"></a>
+<body>
+    <div class="wrapper">
+        <h2>Payment Form</h2>
+        <form action="" method="post">
+            <h4>Account</h4>
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="text" placeholder="Full Name" required class="name">
+                    <i class="fa fa-user icon"></i>
+                </div>
+                <div class="input_box">
+                    <input type="text" placeholder="Name on Card" required class="name">
+                    <i class="fa fa-user icon"></i>
+                </div>
             </div>
-            <div id="loginsearch">
-                <div id="search">
-                    <input type="search" id="inputsearch">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <div id="searchData">
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="email" placeholder="Email Address" required class="name">
+                    <i class="fa fa-envelope icon"></i>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="text" placeholder="Address" required class="name">
+                    <i class="fa fa-map-marker icon" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="text" placeholder="City" required class="name">
+                    <i class="fa fa-institution icon"></i>
+                </div>
+            </div>
+            <!--Account Information End-->
+
+
+            <!--DOB & Gender Start-->
+            <div class="input_group">
+                <div class="input_box">
+                    <h4>Date Of Birth</h4>
+                    <input type="text" placeholder="DD" required class="dob">
+                    <input type="text" placeholder="MM" required class="dob">
+                    <input type="text" placeholder="YYYY" required class="dob">
+                </div>
+                <div class="input_box">
+                    <h4>Gender</h4>
+                    <input type="radio" name="gender" class="radio" id="b1" checked>
+                    <label for="b1">Male</label>
+                    <input type="radio" name="gender" class="radio" id="b2">
+                    <label for="b2">Female</label>
+                </div>
+            </div>
+            <!--DOB & Gender End-->
+
+
+            <!--Payment Details Start-->
+            <div class="input_group">
+                <div class="input_box">
+                    <h4>Payment Details</h4>
+                    <input type="radio" name="pay" class="radio" id="bc1" checked>
+                    <label for="bc1"><span>
+                            <i class="fa fa-cc-visa"></i>Credit Card</span></label>
+                    <input type="radio" name="pay" class="radio" id="bc2">
+                    <label for="bc2"><span>
+                            <i class="fa fa-cc-paypal"></i>Paypal</span></label>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="tel" name="" class="name" placeholder="Card Number 1111-2222-3333-4444" required>
+                    <i class="fa fa-credit-card icon"></i>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <input type="tel" name="" class="name" placeholder="Card CVC 632" required>
+                    <i class="fa fa-user icon"></i>
+                </div>
+            </div>
+            <div class="input_group">
+                <div class="input_box">
+                    <div class="input_box">
+                        <input type="number" placeholder="Exp Month" required class="name">
+                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
                     </div>
                 </div>
-                <div id="shopplus">
-                    <a href="#">shop <span><img src="./src/images/Untitled design.png" alt=""></span></a>
-                </div>
-                <div id="admin">
-                    <img class="flaticons" src="./src/images/user (1).png" alt="">
-                    <p>Account</p>
-                </div>
-                <div id="cart">
-                    <img class="flaticons" src="./src/images/shopping-cart.png" alt="">
-                    <p>Cart</p>
+                <div class="input_box">
+                    <input type="number" placeholder="Exp Year" required class="name">
+                    <i class="fa fa-calendar-o icon" aria-hidden="true"></i>
                 </div>
             </div>
-        </div>
-    </header>
-    <main>
-        <div class="container" id="payment">
-            <div id="address">
-                <p>Address Name : Mohima Bahadur</p>
-                <p>Address : 20 south purbachal belabhavana kolkata-700078</p>
-                <p>Zip Code : 700078</p>
+            <div class="input_box">
+                <input type="number" placeholder="Enter Amount" required class="name">
+                <i class="fa fa-money icon" aria-hidden="true"></i>
             </div>
-            <div id="paymentoption">
-                <img src="https://lh3.googleusercontent.com/RkN2IcvWd4DWNTVbh8Ma2G77D42Gd5HP0Deydf9FmzbDUMxLNsmWUSE8k562PgEPKzmF_OGWIiySxhdLUdNcxJ3t8kc7JugTaAhHYA" alt="gpay" id="gpay">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmx8nwpo-338eCaUbee48Za-7ZUxPl1OqEyBJchcWp-BnWz5qsYqD9FWSTgTA8hHSX3dE&usqp=CAU" alt="phone-pe" id="ppay">
-            </div>
-        </div>
-        <div id="popup">
-            <form id="form">
-                <img src="https://cdn-icons-png.flaticon.com/512/59/59254.png" alt="">
-                <h2>phone-pe</h2>
-                <label>Phone Number</label>
-                <br>
-                <input type="number" id="number">
-                <br>
-                <input type="submit">
-            </form>
-        </div>
-    </main>
-    <footer>
-        <div id="upperdiv" class="container">
-            <div>
-                <div id="social">
-                    <a href="#"><img src="https://www.dollartree.com/file/general/footericon_Instagram.png" alt=""></a>
-                    <a href="#"><img src="https://www.dollartree.com/file/general/footericon-fb.png" alt=""></a>
-                    <a href="#"><img src="https://www.dollartree.com/file/general/footericon-twitter.png" alt=""></a>
-                    <a href="#"><img src="https://www.dollartree.com/file/general/footericon-linkedin.png" alt=""></a>
-                    <a href="#"><img src="https://www.dollartree.com/file/general/footericon-pinterest.png" alt=""></a>
-                </div>
-                <div>
-                    <img src="https://www.dollartree.com/file/general/vsblogo_final_m_260x55_20200805.png" alt="">
-                </div>
-                <div>
-                    <img src="https://www.dollartree.com/file/general/footer-videos.png" alt="">
+            <!--Payment Details End-->
+
+            <div class="input_group">
+                <div class="input_box">
+                    <button type="submit">PAY NOW</button>
                 </div>
             </div>
-            <div>
-                <div>
-                    <p>Customer Service</p>
-                    <a href="#">Catalog Quick Order</a>
-                    <a href="#">Contact Us / Help Center</a>
-                    <a href="#">Forgot Password</a>
-                    <a href="#">In-Store Pickup</a>
-                    <a href="#">My Account</a>
-                    <a href="#">Order Status</a>
-                    <a href="#">Placing Tax-Exempt Orders</a>
-                    <a href="#">Recall Information</a>
-                    <a href="#">En Español</a>
-                    <a href="#">Privacy Requests</a>
-                </div>
-                <div>
-                    <p>Dollar Tree Stores</p>
-                    <a href="#">Gift Cardsr</a>
-                    <a href="#">Reloadable Debit Cards</a>
-                    <a href="#">Store Locator</a>
-                    <a href="#">Store Careers</a>
-                    <a href="#">Weekly Ad</a>
-                    <a href="#">Value Seekers Blog</a>
-                    <a href="#">Dollar Tree Canada</a>
-                    <a href="#">Coronavirus Response</a>
-                </div>
-                <div>
-                    <p>Company Info</p>
-                    <a href="#">About Us</a>
-                    <a href="#">Affiliates</a>
-                    <a href="#">Associates</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Investor Relations</a>
-                    <a href="#">Real Estate Partners</a>
-                    <a href="#">Sustainability Report (PDF 2.7 MB)</a>
-                    <a href="#">Vendor Partners</a>
-                    <a href="#">W2 Information</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+
+        </form>
+    </div>
+
 </body>
 </html>
 <script src="./Js/payment.js"></script>
+        

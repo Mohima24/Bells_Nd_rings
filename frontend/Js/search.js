@@ -1,12 +1,10 @@
 const search = document.getElementById("inputsearch")
 const searchData = document.getElementById("searchData")
 const thrillsec_childdiv = document.querySelectorAll("#thrilling>div")
-let access_token = JSON.parse(localStorage.getItem("access_token")) || null
+let access_token = localStorage.getItem("access_token") || null
 const userData = JSON.parse(localStorage.getItem('userData')) || null
 const cartnav= document.getElementById("cart")
 
-// const adminside = document.getElementById("adminside")
-console.log(userData)
 const admin= document.getElementById("admin")
 if(userData){
     admin.innerHTML=`
@@ -14,6 +12,13 @@ if(userData){
     <p>(logout)</p>
     `
 }
+
+admin.addEventListener('click',() => {
+
+    localStorage.setItem('access_token',null);
+    localStorage.setItem('userData',null);
+    window.location.assign('index.html')
+})
 
 searchData.innerHTML=""
 let bag=[]
@@ -55,10 +60,6 @@ function searchrender(data){
     }).join("")}`
 }
 
-admin.addEventListener('click',()=>{
-    window.location.assign("signin.html")
-})
 cartnav.addEventListener("click",()=>{
     window.location.assign("cart.html")
 })
-
