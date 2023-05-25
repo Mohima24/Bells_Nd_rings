@@ -14,10 +14,15 @@ if(userData){
 }
 
 admin.addEventListener('click',() => {
+    if(userData == null){
+        window.location.assign("signup.html")
+    }else{
 
-    localStorage.setItem('access_token',null);
-    localStorage.setItem('userData',null);
-    window.location.assign('index.html')
+        localStorage.setItem('access_token',null);
+        localStorage.setItem('userData',null);
+        window.location.assign('index.html')
+
+    }
 })
 
 searchData.innerHTML=""
