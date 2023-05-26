@@ -4,6 +4,9 @@
 h1,h2,h3,h4,h5,h6,a{
     font-family: 'League Spartan', sans-serif;
 }
+.fa-bars{
+    display: none;
+}
 
 *{
     margin: 0px;
@@ -145,4 +148,46 @@ a{
 }
 #searchData>div:hover>img{
     filter: grayscale(100%);
+}
+@media screen and (max-width: 1290px) {
+    #topNavbar{
+        padding: 16px 0;
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 470px){
+    #topNavbar{
+        padding: 16px 0;
+        font-size: 16px;
+    }
+    #topNavbar>div{
+        display: none;
+    }
+    .fa-bars{
+        display: flex;
+        font-size: 2rem;
+        padding-left: 1.6rem;
+    }
+    #logo{
+        width: 21%;
+    }
+    #loginsearch{
+        grid-template-columns: repeat(15,1fr);
+        align-items: center;
+    }
+    #shopplus{
+        display: none;
+    }
+    #search{
+        grid-area: 1/1/1/11;
+    }
+    #admin>p,#cart>p{
+        display: none;
+    }
+    #admin{
+        grid-area:1/12/1/13
+    }
+    #cart{
+        grid-area:1/14/1/15
+    }
 }
