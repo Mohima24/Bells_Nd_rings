@@ -16,12 +16,17 @@ a{
     text-decoration: none;
 }
 .container{
-    width: 90%;
+    padding: 5px 15px;
     margin:0 auto;
 }
 
 
 .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_flex{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +37,7 @@ a{
 #topNavbar{
     background-color: #ff5757;
     color: white;
-    font-size: 14px;
+    font-size: 1rem;
     padding: 10px 0;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -40,29 +45,26 @@ a{
 #topNavbar a{
     color: white;
 }
-#leftside{
-    width: 60%;
+#leftside,#rightside{
     display: flex;
     justify-content: space-between;
-
+    gap: 15px;
 }
-#leftside>div,#rightside>div{
+#leftside>a,#rightside>a{
     display: flex;
     align-items: center;
     cursor: pointer;
+    padding: 10px 5px;
 }
-#leftside>div>img{
+#rightside > a{
+}
+#leftside a img , #rightside a img{
     width: 18px;
     padding-right: 10px;
 }
-#rightside>div>img{
-    width: 18px;
-    padding-right: 10px;
-}
-#rightside{
-    width: 30%;
-    display: flex;
-    justify-content: space-between;
+#leftside>a:hover,#rightside>a:hover{
+    background-color:#f80a0a;
+    border-radius: 10px;
 }
 /* ------------------------------------bottom----------------------------- */
 
@@ -157,16 +159,44 @@ a{
 }
 @media screen and (max-width: 470px){
     #topNavbar{
+        display: flex;
         padding: 16px 0;
         font-size: 16px;
     }
     #topNavbar>div{
+        position: absolute;
+        z-index: 5;
+        background-color: #ff5757;
+        top:60px;
+        right: 0;
+    }
+    #topNavbar .nav_flex{
+        display: none;
+        height: 100vh;
+        padding: 0;
+    }
+    #leftside,#rightside{
+        display: block;
+        padding: 0 10px;
+    }
+    #leftside > a, #rightside > a{
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+    #leftside > a > img, #rightside > a > img{
+        width: 25px;
+    }
+    #leftside > a > p, #rightside > a>p{
         display: none;
     }
+    #topNavbar:hover .nav_flex{
+        display: block;
+    }
     .fa-bars{
+        margin-left: auto;
         display: flex;
         font-size: 2rem;
-        padding-left: 1.6rem;
+        padding-right: 30px;
     }
     #logo{
         width: 21%;
