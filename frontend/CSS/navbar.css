@@ -38,6 +38,7 @@ a{
     background-color: #ff5757;
     color: white;
     font-size: 1rem;
+    font-weight: 600;
     padding: 10px 0;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -73,24 +74,29 @@ a{
     justify-content: space-between;
     align-items: center;
 }
-#logo{
-    width: 13%;
-    height: 50%;
-    overflow: hidden;
+#logo a img {
+    width:10vw;
 }
 #loginsearch{
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(13,1fr);
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    width: 80%; 
+    align-items: center;
+    position: relative;
+}
+#loginsearch img{
+    width: 25px;
 }
 #search{
+    width: 40vw;
     position: relative;
-    grid-area: 1/1/1/9;
 }
 #search>input[type=search]{
     padding: 10px;
     width: 100%;
+    outline: none;
+    border: 2px solid #ff5757;
+    border-radius: 20px;
 }
 #search>i{
     position: absolute;
@@ -98,29 +104,6 @@ a{
     bottom: 0;
     right:10px;
     color: #ff5757;
-}
-#shopplus{
-    grid-area: 1/10/1/12;
-}
-#admin{
-    grid-area: 1/12/1/13;
-}
-#admin>p:first-child{
-    color: #ff5757;
-}
-#cart {
-    grid-area: 1/13/1/14;
-}
-#shopplus img{
-    width: 50%;
-    overflow: hidden;
-}
-
-.flaticons{
-    font-size: 26px;  
-}
-#admin,#cart,#logo,#shopplus{
-    cursor: pointer;
 }
 #searchData{
     position: absolute;
@@ -150,6 +133,42 @@ a{
 }
 #searchData>div:hover>img{
     filter: grayscale(100%);
+}
+#admin>p:first-child{
+    color: #ff5757;
+}
+#shopplus a span img{
+    width: 100px;
+}
+#admin,#cart,#logo,#shopplus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 700;
+}
+#shopplus a{
+    font-size: 1.5rem;
+    color: #0000ff;
+    font-weight: 900;
+}
+.link_hover{
+    position: relative;
+}
+.link_hover::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    border-radius: 10px;
+    width: 0%;
+    background-color: #f80a0a;
+    bottom: 2px;
+    transition: all .2s ease-in-out;
+}
+.link_hover:hover::after{
+    width: 100%;
 }
 @media screen and (max-width: 1290px) {
     #topNavbar{
