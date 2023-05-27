@@ -13,9 +13,7 @@ a{
 #marginbot{
     margin-bottom: 20%
 }
-#banner{
-    margin-top: 3%;
-    text-align: center;
+#banner{ 
     position: relative;
     width: 100%;
 }
@@ -23,18 +21,27 @@ a{
     width: 100%;
     z-index: -3;
 }
-#banner>a{
+#banner a{
     font-family:'League Spartan', sans-serif;
-    color: white;
-    font-size: 2rem;
-    padding: 10px 0px;
     position: absolute;
-    top:197px;
-    bottom: 156;
-    left: 480px;
-    background-color: black;
-    border-radius: 15px;
-    right: 480px;
+    top: 50%;
+    width: 100%;
+    right: 0;
+    text-align: center;
+}
+#banner a button {
+    font-size: 2vw;
+    padding: 5px 15px;
+    border: none;
+    background-color: #f14747;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 13px 0px #515151;
+    cursor: pointer;
+}
+#banner a button:hover{
+    background-color: #f14747bc;
+    transform: scale(1.1);
 }
 
 /* ---------------------thirilling find----------------- */
