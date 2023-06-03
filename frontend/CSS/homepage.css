@@ -329,7 +329,7 @@ a{
         margin-top: 10%;
     }
     .discoverh2{
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom:4%
     }
     
@@ -348,5 +348,11 @@ a{
     }
     #valentine>div{
         width: 47%;
+    }
+    #arrivals>div>h6{
+        font-size: 1.3rem;
+    }
+    #arrivals>div>p{
+        font-size: 1rem;
     }
 }

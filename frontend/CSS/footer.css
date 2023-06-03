@@ -45,3 +45,34 @@ footer{
 #upperdiv>div:nth-child(2) a:hover{
     text-decoration: underline;
 }
+@media screen and (max-width: 470px){
+    #enddiv{
+        height: 25vh;
+        flex-direction: column;
+    }
+    #upperdiv{
+        flex-direction: column;
+    }
+    #upperdiv>div:nth-child(1){
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid white;
+        margin-bottom: 15px;
+    }
+    #social{
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    #social img{
+        width: 70%;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    #upperdiv>div:nth-child(2){
+        flex-direction: column;
+    }
+    #upperdiv>div:nth-child(2)>div{
+        width: 100%;
+    }
+}
